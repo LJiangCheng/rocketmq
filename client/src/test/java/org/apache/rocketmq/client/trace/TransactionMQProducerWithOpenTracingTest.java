@@ -75,18 +75,18 @@ import static org.mockito.Mockito.when;
 public class TransactionMQProducerWithOpenTracingTest {
 
     @Spy
-    private MQClientInstance mQClientFactory = MQClientManager.getInstance().getOrCreateMQClientInstance(new ClientConfig());
+    private final MQClientInstance mQClientFactory = MQClientManager.getInstance().getOrCreateMQClientInstance(new ClientConfig());
     @Mock
     private MQClientAPIImpl mQClientAPIImpl;
 
     private TransactionMQProducer producer;
 
     private Message message;
-    private String topic = "FooBar";
-    private String producerGroupPrefix = "FooBar_PID";
-    private String producerGroupTemp = producerGroupPrefix + System.currentTimeMillis();
-    private String producerGroupTraceTemp = TopicValidator.RMQ_SYS_TRACE_TOPIC + System.currentTimeMillis();
-    private MockTracer tracer = new MockTracer();
+    private final String topic = "FooBar";
+    private final String producerGroupPrefix = "FooBar_PID";
+    private final String producerGroupTemp = producerGroupPrefix + System.currentTimeMillis();
+    private final String producerGroupTraceTemp = TopicValidator.RMQ_SYS_TRACE_TOPIC + System.currentTimeMillis();
+    private final MockTracer tracer = new MockTracer();
     @Before
     public void init() throws Exception {
         TransactionListener transactionListener = new TransactionListener() {

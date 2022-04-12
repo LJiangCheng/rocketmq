@@ -28,18 +28,18 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class ParserTest {
 
-    private static String andExpression = "a=3 and b<>4 And c>5 AND d<=4";
-    private static String andExpressionHasBlank = "a=3  and    b<>4 And c>5 AND d<=4";
-    private static String orExpression = "a=3 or b<>4 Or c>5 OR d<=4";
-    private static String inExpression = "a in ('3', '4', '5')";
-    private static String notInExpression = "(a not in ('6', '4', '5')) or (b in ('3', '4', '5'))";
-    private static String betweenExpression = "(a between 2 and 10) AND (b not between 6 and 9)";
-    private static String equalNullExpression = "a is null";
-    private static String notEqualNullExpression = "a is not null";
-    private static String nowExpression = "a <= now";
+    private static final String andExpression = "a=3 and b<>4 And c>5 AND d<=4";
+    private static final String andExpressionHasBlank = "a=3  and    b<>4 And c>5 AND d<=4";
+    private static final String orExpression = "a=3 or b<>4 Or c>5 OR d<=4";
+    private static final String inExpression = "a in ('3', '4', '5')";
+    private static final String notInExpression = "(a not in ('6', '4', '5')) or (b in ('3', '4', '5'))";
+    private static final String betweenExpression = "(a between 2 and 10) AND (b not between 6 and 9)";
+    private static final String equalNullExpression = "a is null";
+    private static final String notEqualNullExpression = "a is not null";
+    private static final String nowExpression = "a <= now";
 
-    private static String invalidExpression = "a and between 2 and 10";
-    private static String illegalBetween = " a between 10 and 0";
+    private static final String invalidExpression = "a and between 2 and 10";
+    private static final String illegalBetween = " a between 10 and 0";
 
     @Test
     public void testParse_valid() {

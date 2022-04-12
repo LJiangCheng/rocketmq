@@ -76,7 +76,7 @@ import static org.mockito.Mockito.when;
 @RunWith(MockitoJUnitRunner.class)
 public class DefaultLitePullConsumerTest {
     @Spy
-    private MQClientInstance mQClientFactory = MQClientManager.getInstance().getOrCreateMQClientInstance(new ClientConfig());
+    private final MQClientInstance mQClientFactory = MQClientManager.getInstance().getOrCreateMQClientInstance(new ClientConfig());
 
     @Mock
     private MQClientAPIImpl mQClientAPIImpl;
@@ -88,9 +88,9 @@ public class DefaultLitePullConsumerTest {
     private RebalanceImpl rebalanceImpl;
     private OffsetStore offsetStore;
     private DefaultLitePullConsumerImpl litePullConsumerImpl;
-    private String consumerGroup = "LitePullConsumerGroup";
-    private String topic = "LitePullConsumerTest";
-    private String brokerName = "BrokerA";
+    private final String consumerGroup = "LitePullConsumerGroup";
+    private final String topic = "LitePullConsumerTest";
+    private final String brokerName = "BrokerA";
     private boolean flag = false;
 
     @Before
@@ -598,7 +598,7 @@ public class DefaultLitePullConsumerTest {
                     messageClientExt.setOffsetMsgId("234");
                     messageClientExt.setBornHost(new InetSocketAddress(8080));
                     messageClientExt.setStoreHost(new InetSocketAddress(8080));
-                    PullResult pullResult = createPullResult(requestHeader, PullStatus.FOUND, Collections.<MessageExt>singletonList(messageClientExt));
+                    PullResult pullResult = createPullResult(requestHeader, PullStatus.FOUND, Collections.singletonList(messageClientExt));
                     return pullResult;
                 }
             });

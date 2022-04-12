@@ -95,9 +95,9 @@ public class DefaultMQAdminExtImpl implements MQAdminExt, MQAdminExtInner {
     private final DefaultMQAdminExt defaultMQAdminExt;
     private ServiceState serviceState = ServiceState.CREATE_JUST;
     private MQClientInstance mqClientInstance;
-    private RPCHook rpcHook;
+    private final RPCHook rpcHook;
     private long timeoutMillis = 20000;
-    private Random random = new Random();
+    private final Random random = new Random();
 
     private static final Set<String> SYSTEM_GROUP_SET = new HashSet<String>();
 

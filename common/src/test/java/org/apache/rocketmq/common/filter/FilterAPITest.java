@@ -26,9 +26,9 @@ import java.util.Set;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class FilterAPITest {
-    private String topic = "FooBar";
-    private String group = "FooBarGroup";
-    private String subString = "TAG1 || Tag2 || tag3";
+    private final String topic = "FooBar";
+    private final String group = "FooBarGroup";
+    private final String subString = "TAG1 || Tag2 || tag3";
 
     @Test
     public void testBuildSubscriptionData() throws Exception {

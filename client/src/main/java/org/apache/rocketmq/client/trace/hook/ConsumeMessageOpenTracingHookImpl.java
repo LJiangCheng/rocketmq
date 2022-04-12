@@ -35,7 +35,7 @@ import java.util.List;
 
 public class ConsumeMessageOpenTracingHookImpl implements ConsumeMessageHook {
 
-    private Tracer tracer;
+    private final Tracer tracer;
 
     public ConsumeMessageOpenTracingHookImpl(Tracer tracer) {
         this.tracer = tracer;

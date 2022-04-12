@@ -54,13 +54,13 @@ import static org.mockito.Mockito.when;
 @RunWith(MockitoJUnitRunner.class)
 public class DefaultMQPullConsumerTest {
     @Spy
-    private MQClientInstance mQClientFactory = MQClientManager.getInstance().getOrCreateMQClientInstance(new ClientConfig());
+    private final MQClientInstance mQClientFactory = MQClientManager.getInstance().getOrCreateMQClientInstance(new ClientConfig());
     @Mock
     private MQClientAPIImpl mQClientAPIImpl;
     private DefaultMQPullConsumer pullConsumer;
-    private String consumerGroup = "FooBarGroup";
-    private String topic = "FooBar";
-    private String brokerName = "BrokerA";
+    private final String consumerGroup = "FooBarGroup";
+    private final String topic = "FooBar";
+    private final String brokerName = "BrokerA";
 
     @Before
     public void init() throws Exception {

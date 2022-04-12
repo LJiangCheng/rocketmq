@@ -292,8 +292,8 @@ public class TransactionProducer {
 }
 
 class TransactionListenerImpl implements TransactionListener {
-    private StatsBenchmarkTProducer statBenchmark;
-    private TxSendConfig sendConfig;
+    private final StatsBenchmarkTProducer statBenchmark;
+    private final TxSendConfig sendConfig;
     private final LRUMap<Long, Integer> cache = new LRUMap<>(200000);
 
     private class MsgMeta {
@@ -475,7 +475,7 @@ class TxSendConfig {
 
 class LRUMap<K, V> extends LinkedHashMap<K, V> {
 
-    private int maxSize;
+    private final int maxSize;
 
     public LRUMap(int maxSize) {
         this.maxSize = maxSize;

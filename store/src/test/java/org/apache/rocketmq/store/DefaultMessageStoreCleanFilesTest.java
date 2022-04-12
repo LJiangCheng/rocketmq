@@ -57,14 +57,14 @@ public class DefaultMessageStoreCleanFilesTest {
     private SocketAddress bornHost;
     private SocketAddress storeHost;
 
-    private String topic = "test";
-    private String keys = "hello";
-    private int queueId = 0;
-    private int fileCountCommitLog = 55;
+    private final String topic = "test";
+    private final String keys = "hello";
+    private final int queueId = 0;
+    private final int fileCountCommitLog = 55;
     // exactly one message per CommitLog file.
-    private int msgCount = fileCountCommitLog;
-    private int mappedFileSize = 128;
-    private int fileReservedTime = 1;
+    private final int msgCount = fileCountCommitLog;
+    private final int mappedFileSize = 128;
+    private final int fileReservedTime = 1;
 
     @Before
     public void init() throws Exception {

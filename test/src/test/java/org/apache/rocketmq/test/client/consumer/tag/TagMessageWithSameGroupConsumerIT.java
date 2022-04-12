@@ -33,10 +33,10 @@ import org.junit.Test;
 import static com.google.common.truth.Truth.assertThat;
 
 public class TagMessageWithSameGroupConsumerIT extends BaseConf {
-    private static Logger logger = Logger.getLogger(TagMessageWith1ConsumerIT.class);
+    private static final Logger logger = Logger.getLogger(TagMessageWith1ConsumerIT.class);
     private RMQNormalProducer producer = null;
     private String topic = null;
-    private String tag = "tag";
+    private final String tag = "tag";
 
     @Before
     public void setUp() {
@@ -47,7 +47,7 @@ public class TagMessageWithSameGroupConsumerIT extends BaseConf {
 
     @After
     public void tearDown() {
-        super.shutdown();
+        shutdown();
     }
 
     @Test

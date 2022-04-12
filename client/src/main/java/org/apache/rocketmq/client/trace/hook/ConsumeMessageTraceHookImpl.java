@@ -34,7 +34,7 @@ import org.apache.rocketmq.common.protocol.NamespaceUtil;
 
 public class ConsumeMessageTraceHookImpl implements ConsumeMessageHook {
 
-    private TraceDispatcher localDispatcher;
+    private final TraceDispatcher localDispatcher;
 
     public ConsumeMessageTraceHookImpl(TraceDispatcher localDispatcher) {
         this.localDispatcher = localDispatcher;

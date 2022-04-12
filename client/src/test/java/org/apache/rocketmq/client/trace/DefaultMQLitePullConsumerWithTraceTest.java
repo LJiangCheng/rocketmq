@@ -85,7 +85,7 @@ import static org.mockito.Mockito.when;
 public class DefaultMQLitePullConsumerWithTraceTest {
 
     @Spy
-    private MQClientInstance mQClientFactory = MQClientManager.getInstance().getOrCreateMQClientInstance(new ClientConfig());
+    private final MQClientInstance mQClientFactory = MQClientManager.getInstance().getOrCreateMQClientInstance(new ClientConfig());
 
     @Mock
     private MQClientAPIImpl mQClientAPIImpl;
@@ -97,12 +97,12 @@ public class DefaultMQLitePullConsumerWithTraceTest {
     private RebalanceImpl rebalanceImpl;
     private OffsetStore offsetStore;
     private DefaultLitePullConsumerImpl litePullConsumerImpl;
-    private String consumerGroup = "LitePullConsumerGroup";
-    private String topic = "LitePullConsumerTest";
-    private String brokerName = "BrokerA";
-    private String producerGroupTraceTemp = TopicValidator.RMQ_SYS_TRACE_TOPIC + System.currentTimeMillis();
+    private final String consumerGroup = "LitePullConsumerGroup";
+    private final String topic = "LitePullConsumerTest";
+    private final String brokerName = "BrokerA";
+    private final String producerGroupTraceTemp = TopicValidator.RMQ_SYS_TRACE_TOPIC + System.currentTimeMillis();
 
-    private String customerTraceTopic = "rmq_trace_topic_12345";
+    private final String customerTraceTopic = "rmq_trace_topic_12345";
 
     @Before
     public void init() throws Exception {
@@ -234,7 +234,7 @@ public class DefaultMQLitePullConsumerWithTraceTest {
                     messageClientExt.setOffsetMsgId("234");
                     messageClientExt.setBornHost(new InetSocketAddress(8080));
                     messageClientExt.setStoreHost(new InetSocketAddress(8080));
-                    PullResult pullResult = createPullResult(requestHeader, PullStatus.FOUND, Collections.<MessageExt>singletonList(messageClientExt));
+                    PullResult pullResult = createPullResult(requestHeader, PullStatus.FOUND, Collections.singletonList(messageClientExt));
                     return pullResult;
                 }
             });

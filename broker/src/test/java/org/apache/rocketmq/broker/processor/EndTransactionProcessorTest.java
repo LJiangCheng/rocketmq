@@ -59,7 +59,7 @@ public class EndTransactionProcessorTest {
     private ChannelHandlerContext handlerContext;
 
     @Spy
-    private BrokerController
+    private final BrokerController
         brokerController = new BrokerController(new BrokerConfig(), new NettyServerConfig(), new NettyClientConfig(),
         new MessageStoreConfig());
 

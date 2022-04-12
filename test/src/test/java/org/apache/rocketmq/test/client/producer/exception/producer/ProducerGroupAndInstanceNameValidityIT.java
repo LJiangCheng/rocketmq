@@ -28,7 +28,7 @@ import org.junit.Test;
 import static com.google.common.truth.Truth.assertThat;
 
 public class ProducerGroupAndInstanceNameValidityIT extends BaseConf {
-    private static Logger logger = Logger.getLogger(ProducerGroupAndInstanceNameValidityIT.class);
+    private static final Logger logger = Logger.getLogger(ProducerGroupAndInstanceNameValidityIT.class);
     private String topic = null;
 
     @Before
@@ -39,7 +39,7 @@ public class ProducerGroupAndInstanceNameValidityIT extends BaseConf {
 
     @After
     public void tearDown() {
-        super.shutdown();
+        shutdown();
     }
 
     /**

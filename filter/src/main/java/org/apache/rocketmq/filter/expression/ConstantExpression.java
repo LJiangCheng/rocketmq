@@ -30,7 +30,7 @@ package org.apache.rocketmq.filter.expression;
  */
 public class ConstantExpression implements Expression {
 
-    private Object value;
+    private final Object value;
 
     public ConstantExpression(Object value) {
         this.value = value;

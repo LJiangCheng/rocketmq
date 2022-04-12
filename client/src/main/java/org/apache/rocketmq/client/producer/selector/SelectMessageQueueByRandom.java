@@ -23,7 +23,7 @@ import org.apache.rocketmq.common.message.Message;
 import org.apache.rocketmq.common.message.MessageQueue;
 
 public class SelectMessageQueueByRandom implements MessageQueueSelector {
-    private Random random = new Random(System.currentTimeMillis());
+    private final Random random = new Random(System.currentTimeMillis());
 
     @Override
     public MessageQueue select(List<MessageQueue> mqs, Message msg, Object arg) {

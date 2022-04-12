@@ -77,7 +77,7 @@ public class ConsumeMessageOrderlyService implements ConsumeMessageService {
 
         String consumeThreadPrefix = null;
         if (consumerGroup.length() > 100) {
-            consumeThreadPrefix = new StringBuilder("ConsumeMessageThread_").append(consumerGroup.substring(0, 100)).append("_").toString();
+            consumeThreadPrefix = new StringBuilder("ConsumeMessageThread_").append(consumerGroup, 0, 100).append("_").toString();
         } else {
             consumeThreadPrefix = new StringBuilder("ConsumeMessageThread_").append(consumerGroup).append("_").toString();
         }

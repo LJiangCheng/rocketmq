@@ -69,7 +69,7 @@ import static org.mockito.Mockito.when;
 public class MonitorServiceTest {
     private static DefaultMQAdminExt defaultMQAdminExt;
     private static DefaultMQAdminExtImpl defaultMQAdminExtImpl;
-    private static MQClientInstance mqClientInstance = MQClientManager.getInstance().getOrCreateMQClientInstance(new ClientConfig());
+    private static final MQClientInstance mqClientInstance = MQClientManager.getInstance().getOrCreateMQClientInstance(new ClientConfig());
     private static MQClientAPIImpl mQClientAPIImpl;
     private static MonitorConfig monitorConfig;
     private static MonitorListener monitorListener;

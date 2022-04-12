@@ -160,11 +160,8 @@ public class SubscriptionData implements Comparable<SubscriptionData> {
         } else if (!topic.equals(other.topic))
             return false;
         if (expressionType == null) {
-            if (other.expressionType != null)
-                return false;
-        } else if (!expressionType.equals(other.expressionType))
-            return false;
-        return true;
+            return other.expressionType == null;
+        } else return expressionType.equals(other.expressionType);
     }
 
     @Override

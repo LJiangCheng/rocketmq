@@ -143,7 +143,7 @@ public class UpdateTopicSubCommand implements SubCommand {
                     String orderConf = brokerName + ":" + topicConfig.getWriteQueueNums();
                     defaultMQAdminExt.createOrUpdateOrderConf(topicConfig.getTopicName(), orderConf, false);
                     System.out.printf("%s", String.format("set broker orderConf. isOrder=%s, orderConf=[%s]",
-                        isOrder, orderConf.toString()));
+                        isOrder, orderConf));
                 }
                 System.out.printf("create topic to %s success.%n", addr);
                 System.out.printf("%s", topicConfig);

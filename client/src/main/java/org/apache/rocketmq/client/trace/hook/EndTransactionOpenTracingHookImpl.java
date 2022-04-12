@@ -30,7 +30,7 @@ import org.apache.rocketmq.common.message.MessageType;
 
 public class EndTransactionOpenTracingHookImpl implements EndTransactionHook {
 
-    private Tracer tracer;
+    private final Tracer tracer;
 
     public EndTransactionOpenTracingHookImpl(Tracer tracer) {
         this.tracer = tracer;

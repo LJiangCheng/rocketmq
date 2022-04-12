@@ -1142,7 +1142,7 @@ public class CommitLog {
 
     public static class GroupCommitRequest {
         private final long nextOffset;
-        private CompletableFuture<PutMessageStatus> flushOKFuture = new CompletableFuture<>();
+        private final CompletableFuture<PutMessageStatus> flushOKFuture = new CompletableFuture<>();
         private final long deadLine;
 
         public GroupCommitRequest(long nextOffset, long timeoutMillis) {
@@ -1721,8 +1721,8 @@ public class CommitLog {
     }
 
     static class PutMessageThreadLocal {
-        private MessageExtEncoder encoder;
-        private StringBuilder keyBuilder;
+        private final MessageExtEncoder encoder;
+        private final StringBuilder keyBuilder;
         PutMessageThreadLocal(int size) {
             encoder = new MessageExtEncoder(size);
             keyBuilder = new StringBuilder();
@@ -1738,7 +1738,7 @@ public class CommitLog {
     }
 
     static class PutMessageContext {
-        private String topicQueueTableKey;
+        private final String topicQueueTableKey;
         private long[] phyPos;
         private int batchSize;
 

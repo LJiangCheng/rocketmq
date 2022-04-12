@@ -23,11 +23,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class NameServerAddressUtilsTest {
 
-    private static String endpoint1 = "http://127.0.0.1:9876";
-    private static String endpoint2 = "127.0.0.1:9876";
-    private static String endpoint3
+    private static final String endpoint1 = "http://127.0.0.1:9876";
+    private static final String endpoint2 = "127.0.0.1:9876";
+    private static final String endpoint3
         = "http://MQ_INST_123456789_BXXUzaee.xxx:80";
-    private static String endpoint4 = "MQ_INST_123456789_BXXUzaee.xxx:80";
+    private static final String endpoint4 = "MQ_INST_123456789_BXXUzaee.xxx:80";
 
     @Test
     public void testValidateInstanceEndpoint() {

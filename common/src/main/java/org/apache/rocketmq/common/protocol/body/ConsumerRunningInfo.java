@@ -87,10 +87,8 @@ public class ConsumerRunningInfo extends RemotingSerializable {
 
                 if (prev != null) {
 
-                    if (prev.getSubscriptionSet().isEmpty()) {
-                        // Subscription empty!
-                        return false;
-                    }
+                    // Subscription empty!
+                    return !prev.getSubscriptionSet().isEmpty();
                 }
             }
         }

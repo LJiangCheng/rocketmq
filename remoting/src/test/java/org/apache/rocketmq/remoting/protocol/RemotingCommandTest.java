@@ -239,11 +239,11 @@ class SampleCommandCustomHeader implements CommandCustomHeader {
 }
 
 class ExtFieldsHeader implements CommandCustomHeader {
-    private String stringValue = "bilibili";
-    private int intValue = 2333;
-    private long longValue = 23333333l;
-    private boolean booleanValue = true;
-    private double doubleValue = 0.618;
+    private final String stringValue = "bilibili";
+    private final int intValue = 2333;
+    private final long longValue = 23333333l;
+    private final boolean booleanValue = true;
+    private final double doubleValue = 0.618;
 
     @Override
     public void checkFields() throws RemotingCommandException {

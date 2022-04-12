@@ -40,7 +40,7 @@ public class OneConsumerMulTopicIT extends BaseConf {
 
     @After
     public void tearDown() {
-        super.shutdown();
+        shutdown();
     }
 
     @Test

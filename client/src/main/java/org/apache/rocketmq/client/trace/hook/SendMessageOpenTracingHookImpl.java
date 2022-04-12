@@ -30,7 +30,7 @@ import org.apache.rocketmq.common.message.Message;
 
 public class SendMessageOpenTracingHookImpl implements SendMessageHook {
 
-    private Tracer tracer;
+    private final Tracer tracer;
 
     public SendMessageOpenTracingHookImpl(Tracer tracer) {
         this.tracer = tracer;

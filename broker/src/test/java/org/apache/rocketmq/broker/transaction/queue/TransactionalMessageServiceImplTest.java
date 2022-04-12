@@ -70,7 +70,7 @@ public class TransactionalMessageServiceImplTest {
     private TransactionalMessageBridge bridge;
 
     @Spy
-    private BrokerController brokerController = new BrokerController(new BrokerConfig(), new NettyServerConfig(),
+    private final BrokerController brokerController = new BrokerController(new BrokerConfig(), new NettyServerConfig(),
         new NettyClientConfig(), new MessageStoreConfig());
 
     @Mock

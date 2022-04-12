@@ -457,25 +457,19 @@ public class UtilAll {
 
             return true;
         } else if (ip[0] == (byte) 172) {
-            if (ip[1] >= (byte) 16 && ip[1] <= (byte) 31) {
-                return true;
-            }
+            return ip[1] >= (byte) 16 && ip[1] <= (byte) 31;
         } else if (ip[0] == (byte) 192) {
-            if (ip[1] == (byte) 168) {
-                return true;
-            }
+            return ip[1] == (byte) 168;
         }
         return false;
     }
 
     public static boolean isInternalV6IP(InetAddress inetAddr) {
-        if (inetAddr.isAnyLocalAddress() // Wild card ipv6
-            || inetAddr.isLinkLocalAddress() // Single broadcast ipv6 address: fe80:xx:xx...
-            || inetAddr.isLoopbackAddress() //Loopback ipv6 address
-            || inetAddr.isSiteLocalAddress()) { // Site local ipv6 address: fec0:xx:xx...
-            return true;
-        }
-        return false;
+        // Site local ipv6 address: fec0:xx:xx...
+        return inetAddr.isAnyLocalAddress() // Wild card ipv6
+                || inetAddr.isLinkLocalAddress() // Single broadcast ipv6 address: fe80:xx:xx...
+                || inetAddr.isLoopbackAddress() //Loopback ipv6 address
+                || inetAddr.isSiteLocalAddress();
     }
 
     private static boolean ipCheck(byte[] ip) {

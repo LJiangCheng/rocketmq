@@ -225,7 +225,7 @@ public class BrokerStartup {
 
             Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
                 private volatile boolean hasShutdown = false;
-                private AtomicInteger shutdownTimes = new AtomicInteger(0);
+                private final AtomicInteger shutdownTimes = new AtomicInteger(0);
 
                 @Override
                 public void run() {

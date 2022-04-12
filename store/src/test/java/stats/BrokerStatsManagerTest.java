@@ -41,9 +41,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class BrokerStatsManagerTest {
     private BrokerStatsManager brokerStatsManager;
 
-    private String TOPIC = "TOPIC_TEST";
-    private Integer QUEUE_ID = 0;
-    private String GROUP_NAME = "GROUP_TEST";
+    private final String TOPIC = "TOPIC_TEST";
+    private final Integer QUEUE_ID = 0;
+    private final String GROUP_NAME = "GROUP_TEST";
 
     @Before
     public void init() {

@@ -29,7 +29,7 @@ import org.apache.rocketmq.common.protocol.NamespaceUtil;
 
 public class SendMessageTraceHookImpl implements SendMessageHook {
 
-    private TraceDispatcher localDispatcher;
+    private final TraceDispatcher localDispatcher;
 
     public SendMessageTraceHookImpl(TraceDispatcher localDispatcher) {
         this.localDispatcher = localDispatcher;
@@ -84,11 +84,7 @@ public class SendMessageTraceHookImpl implements SendMessageHook {
         TraceBean traceBean = tuxeContext.getTraceBeans().get(0);
         int costTime = (int) ((System.currentTimeMillis() - tuxeContext.getTimeStamp()) / tuxeContext.getTraceBeans().size());
         tuxeContext.setCostTime(costTime);
-        if (context.getSendResult().getSendStatus().equals(SendStatus.SEND_OK)) {
-            tuxeContext.setSuccess(true);
-        } else {
-            tuxeContext.setSuccess(false);
-        }
+        tuxeContext.setSuccess(context.getSendResult().getSendStatus().equals(SendStatus.SEND_OK));
         tuxeContext.setRegionId(context.getSendResult().getRegionId());
         traceBean.setMsgId(context.getSendResult().getMsgId());
         traceBean.setOffsetMsgId(context.getSendResult().getOffsetMsgId());

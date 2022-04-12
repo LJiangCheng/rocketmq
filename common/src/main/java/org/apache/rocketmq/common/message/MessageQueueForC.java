@@ -89,10 +89,7 @@ public class MessageQueueForC implements Comparable<MessageQueueForC>, Serializa
         } else if (!topic.equals(other.topic))
             return false;
 
-        if (offset != other.offset) {
-            return false;
-        }
-        return true;
+        return offset == other.offset;
     }
 
     @Override

@@ -27,7 +27,7 @@ import org.apache.rocketmq.test.listener.AbstractListener;
 
 public class RMQNormalListener extends AbstractListener implements MessageListenerConcurrently {
     private ConsumeConcurrentlyStatus consumeStatus = ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
-    private AtomicInteger msgIndex = new AtomicInteger(0);
+    private final AtomicInteger msgIndex = new AtomicInteger(0);
 
     public RMQNormalListener() {
         super();

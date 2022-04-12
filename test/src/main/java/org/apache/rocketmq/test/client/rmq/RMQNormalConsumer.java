@@ -25,7 +25,7 @@ import org.apache.rocketmq.test.listener.AbstractListener;
 import org.apache.rocketmq.test.util.RandomUtil;
 
 public class RMQNormalConsumer extends AbstractMQConsumer {
-    private static Logger logger = Logger.getLogger(RMQNormalConsumer.class);
+    private static final Logger logger = Logger.getLogger(RMQNormalConsumer.class);
     protected DefaultMQPushConsumer consumer = null;
 
     public RMQNormalConsumer(String nsAddr, String topic, String subExpression,

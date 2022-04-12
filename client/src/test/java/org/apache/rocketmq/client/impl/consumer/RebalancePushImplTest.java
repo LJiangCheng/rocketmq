@@ -52,19 +52,19 @@ import static org.mockito.Mockito.when;
 @RunWith(MockitoJUnitRunner.class)
 public class RebalancePushImplTest {
     @Spy
-    private DefaultMQPushConsumerImpl defaultMQPushConsumer = new DefaultMQPushConsumerImpl(new DefaultMQPushConsumer("RebalancePushImplTest"), null);
+    private final DefaultMQPushConsumerImpl defaultMQPushConsumer = new DefaultMQPushConsumerImpl(new DefaultMQPushConsumer("RebalancePushImplTest"), null);
     @Mock
     private MQClientInstance mqClientInstance;
-    private OffsetStore offsetStore = mock(OffsetStore.class);
-    private String consumerGroup = "CID_RebalancePushImplTest";
-    private String topic = "TopicA";
-    private MessageQueue mq = new MessageQueue("topic1", "broker1", 0);
-    private MessageQueue retryMq = new MessageQueue(MixAll.RETRY_GROUP_TOPIC_PREFIX + "group", "broker1", 0);
-    private DefaultMQPushConsumerImpl consumerImpl = mock(DefaultMQPushConsumerImpl.class);
-    private RebalancePushImpl rebalanceImpl = new RebalancePushImpl(consumerImpl);
-    private DefaultMQPushConsumer consumer = new DefaultMQPushConsumer();
-    private MQClientInstance client = mock(MQClientInstance.class);
-    private MQAdminImpl admin = mock(MQAdminImpl.class);
+    private final OffsetStore offsetStore = mock(OffsetStore.class);
+    private final String consumerGroup = "CID_RebalancePushImplTest";
+    private final String topic = "TopicA";
+    private final MessageQueue mq = new MessageQueue("topic1", "broker1", 0);
+    private final MessageQueue retryMq = new MessageQueue(MixAll.RETRY_GROUP_TOPIC_PREFIX + "group", "broker1", 0);
+    private final DefaultMQPushConsumerImpl consumerImpl = mock(DefaultMQPushConsumerImpl.class);
+    private final RebalancePushImpl rebalanceImpl = new RebalancePushImpl(consumerImpl);
+    private final DefaultMQPushConsumer consumer = new DefaultMQPushConsumer();
+    private final MQClientInstance client = mock(MQClientInstance.class);
+    private final MQAdminImpl admin = mock(MQAdminImpl.class);
 
     public RebalancePushImplTest() {
         when(consumerImpl.getDefaultMQPushConsumer()).thenReturn(consumer);

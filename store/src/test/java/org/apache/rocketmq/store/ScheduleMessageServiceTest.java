@@ -51,7 +51,7 @@ import static org.mockito.Mockito.when;
 
 public class ScheduleMessageServiceTest {
 
-    private Random random = new Random();
+    private final Random random = new Random();
 
     @Test
     public void testCorrectDelayOffset_whenInit() throws Exception {

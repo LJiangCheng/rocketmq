@@ -22,8 +22,8 @@ import org.apache.rocketmq.client.consumer.MessageSelector;
 import org.apache.rocketmq.test.listener.AbstractListener;
 
 public class RMQSqlConsumer extends RMQNormalConsumer {
-    private static Logger logger = Logger.getLogger(RMQSqlConsumer.class);
-    private MessageSelector selector;
+    private static final Logger logger = Logger.getLogger(RMQSqlConsumer.class);
+    private final MessageSelector selector;
 
     public RMQSqlConsumer(String nsAddr, String topic, MessageSelector selector,
         String consumerGroup, AbstractListener listener) {

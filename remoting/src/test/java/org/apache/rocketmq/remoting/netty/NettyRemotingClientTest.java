@@ -26,7 +26,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(MockitoJUnitRunner.class)
 public class NettyRemotingClientTest {
-    private NettyRemotingClient remotingClient = new NettyRemotingClient(new NettyClientConfig());
+    private final NettyRemotingClient remotingClient = new NettyRemotingClient(new NettyClientConfig());
 
     @Test
     public void testSetCallbackExecutor() throws NoSuchFieldException, IllegalAccessException {        

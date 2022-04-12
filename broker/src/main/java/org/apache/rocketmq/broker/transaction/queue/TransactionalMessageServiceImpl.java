@@ -46,7 +46,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class TransactionalMessageServiceImpl implements TransactionalMessageService {
     private static final InternalLogger log = InternalLoggerFactory.getLogger(LoggerName.TRANSACTION_LOGGER_NAME);
 
-    private TransactionalMessageBridge transactionalMessageBridge;
+    private final TransactionalMessageBridge transactionalMessageBridge;
 
     private static final int PULL_MSG_RETRY_NUMBER = 1;
 
@@ -58,7 +58,7 @@ public class TransactionalMessageServiceImpl implements TransactionalMessageServ
         this.transactionalMessageBridge = transactionBridge;
     }
 
-    private ConcurrentHashMap<MessageQueue, MessageQueue> opQueueMap = new ConcurrentHashMap<>();
+    private final ConcurrentHashMap<MessageQueue, MessageQueue> opQueueMap = new ConcurrentHashMap<>();
 
     @Override
     public CompletableFuture<PutMessageResult> asyncPrepareMessage(MessageExtBrokerInner messageInner) {

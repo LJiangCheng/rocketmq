@@ -20,7 +20,7 @@ package org.apache.rocketmq.common;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class BrokerConfigSingleton {
-    private static AtomicBoolean isInit = new AtomicBoolean();
+    private static final AtomicBoolean isInit = new AtomicBoolean();
     private static BrokerConfig brokerConfig;
 
     public static BrokerConfig getBrokerConfig() {

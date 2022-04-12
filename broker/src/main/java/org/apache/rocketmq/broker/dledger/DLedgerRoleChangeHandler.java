@@ -34,11 +34,11 @@ import org.apache.rocketmq.store.dledger.DLedgerCommitLog;
 public class DLedgerRoleChangeHandler implements DLedgerLeaderElector.RoleChangeHandler {
 
     private static final InternalLogger log = InternalLoggerFactory.getLogger(LoggerName.BROKER_LOGGER_NAME);
-    private ExecutorService executorService = Executors.newSingleThreadExecutor(new ThreadFactoryImpl("DLegerRoleChangeHandler_"));
-    private BrokerController brokerController;
-    private DefaultMessageStore messageStore;
-    private DLedgerCommitLog dLedgerCommitLog;
-    private DLedgerServer dLegerServer;
+    private final ExecutorService executorService = Executors.newSingleThreadExecutor(new ThreadFactoryImpl("DLegerRoleChangeHandler_"));
+    private final BrokerController brokerController;
+    private final DefaultMessageStore messageStore;
+    private final DLedgerCommitLog dLedgerCommitLog;
+    private final DLedgerServer dLegerServer;
     public DLedgerRoleChangeHandler(BrokerController brokerController, DefaultMessageStore messageStore) {
         this.brokerController = brokerController;
         this.messageStore = messageStore;

@@ -33,18 +33,18 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class ExpressionTest {
 
-    private static String andExpression = "a=3 and b<>4 And c>5 AND d<=4";
-    private static String orExpression = "a=3 or b<>4 Or c>5 OR d<=4";
-    private static String inExpression = "a in ('3', '4', '5')";
-    private static String notInExpression = "a not in ('3', '4', '5')";
-    private static String betweenExpression = "a between 2 and 10";
-    private static String notBetweenExpression = "a not between 2 and 10";
-    private static String isNullExpression = "a is null";
-    private static String isNotNullExpression = "a is not null";
-    private static String equalExpression = "a is not null and a='hello'";
-    private static String booleanExpression = "a=TRUE OR b=FALSE";
-    private static String nullOrExpression = "a is null OR a='hello'";
-    private static String stringHasString = "TAGS is not null and TAGS='''''tag'''''";
+    private static final String andExpression = "a=3 and b<>4 And c>5 AND d<=4";
+    private static final String orExpression = "a=3 or b<>4 Or c>5 OR d<=4";
+    private static final String inExpression = "a in ('3', '4', '5')";
+    private static final String notInExpression = "a not in ('3', '4', '5')";
+    private static final String betweenExpression = "a between 2 and 10";
+    private static final String notBetweenExpression = "a not between 2 and 10";
+    private static final String isNullExpression = "a is null";
+    private static final String isNotNullExpression = "a is not null";
+    private static final String equalExpression = "a is not null and a='hello'";
+    private static final String booleanExpression = "a=TRUE OR b=FALSE";
+    private static final String nullOrExpression = "a is null OR a='hello'";
+    private static final String stringHasString = "TAGS is not null and TAGS='''''tag'''''";
 
     @Test
     public void testEvaluate_stringHasString() throws Exception {

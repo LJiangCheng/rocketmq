@@ -59,11 +59,11 @@ import static org.mockito.Mockito.when;
 
 public class QueryMsgByUniqueKeySubCommandTest {
 
-    private static QueryMsgByUniqueKeySubCommand cmd = new QueryMsgByUniqueKeySubCommand();
+    private static final QueryMsgByUniqueKeySubCommand cmd = new QueryMsgByUniqueKeySubCommand();
 
     private static DefaultMQAdminExt defaultMQAdminExt;
     private static DefaultMQAdminExtImpl defaultMQAdminExtImpl;
-    private static MQClientInstance mqClientInstance = MQClientManager.getInstance().getOrCreateMQClientInstance(new ClientConfig());
+    private static final MQClientInstance mqClientInstance = MQClientManager.getInstance().getOrCreateMQClientInstance(new ClientConfig());
 
     private static MQClientAPIImpl mQClientAPIImpl;
     private static MQAdminImpl mQAdminImpl;
@@ -149,7 +149,7 @@ public class QueryMsgByUniqueKeySubCommandTest {
         offsetWrapper.setLastTimestamp(System.currentTimeMillis());
         offsetTable.put(messageQueue, offsetWrapper);
         consumeStats.setOffsetTable(offsetTable);
-        when(mQClientAPIImpl.getConsumeStats(anyString(), anyString(), (String)isNull(), anyLong())).thenReturn(consumeStats);
+        when(mQClientAPIImpl.getConsumeStats(anyString(), anyString(), isNull(), anyLong())).thenReturn(consumeStats);
 
         ClusterInfo clusterInfo = new ClusterInfo();
         HashMap<String, BrokerData> brokerAddrTable = new HashMap<String, BrokerData>();

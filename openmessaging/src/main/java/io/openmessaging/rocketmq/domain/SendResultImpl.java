@@ -20,8 +20,8 @@ import io.openmessaging.KeyValue;
 import io.openmessaging.producer.SendResult;
 
 public class SendResultImpl implements SendResult {
-    private String messageId;
-    private KeyValue properties;
+    private final String messageId;
+    private final KeyValue properties;
 
     public SendResultImpl(final String messageId, final KeyValue properties) {
         this.messageId = messageId;

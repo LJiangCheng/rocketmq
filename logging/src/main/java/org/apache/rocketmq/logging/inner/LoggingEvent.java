@@ -29,11 +29,11 @@ public class LoggingEvent implements java.io.Serializable {
 
     transient public final String fqnOfCategoryClass;
 
-    transient private Object message;
+    final transient private Object message;
 
-    transient private Level level;
+    final transient private Level level;
 
-    transient private Logger logger;
+    final transient private Logger logger;
 
     private String renderedMessage;
 
@@ -41,7 +41,7 @@ public class LoggingEvent implements java.io.Serializable {
 
     public final long timeStamp;
 
-    private Throwable throwable;
+    private final Throwable throwable;
 
     public LoggingEvent(String fqnOfCategoryClass, Logger logger,
                         Level level, Object message, Throwable throwable) {

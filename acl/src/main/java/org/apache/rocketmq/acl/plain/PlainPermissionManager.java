@@ -55,12 +55,12 @@ public class PlainPermissionManager {
 
     private static final InternalLogger log = InternalLoggerFactory.getLogger(LoggerName.COMMON_LOGGER_NAME);
 
-    private String fileHome = System.getProperty(MixAll.ROCKETMQ_HOME_PROPERTY,
+    private final String fileHome = System.getProperty(MixAll.ROCKETMQ_HOME_PROPERTY,
         System.getenv(MixAll.ROCKETMQ_HOME_ENV));
 
-    private String defaultAclDir = fileHome + File.separator + "conf" + File.separator + "acl";
+    private final String defaultAclDir = fileHome + File.separator + "conf" + File.separator + "acl";
 
-    private String defaultAclFile = fileHome + File.separator + System.getProperty("rocketmq.acl.plain.file", "conf/plain_acl.yml");
+    private final String defaultAclFile = fileHome + File.separator + System.getProperty("rocketmq.acl.plain.file", "conf/plain_acl.yml");
 
     private Map<String/** fileFullPath **/, Map<String/** AccessKey **/, PlainAccessResource>> aclPlainAccessResourceMap = new HashMap<>();
 
@@ -68,7 +68,7 @@ public class PlainPermissionManager {
 
     private List<RemoteAddressStrategy> globalWhiteRemoteAddressStrategy = new ArrayList<>();
 
-    private RemoteAddressStrategyFactory remoteAddressStrategyFactory = new RemoteAddressStrategyFactory();
+    private final RemoteAddressStrategyFactory remoteAddressStrategyFactory = new RemoteAddressStrategyFactory();
 
     private Map<String/** fileFullPath **/, List<RemoteAddressStrategy>> globalWhiteRemoteAddressStrategyMap = new HashMap<>();
 

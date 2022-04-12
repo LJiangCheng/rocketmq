@@ -28,7 +28,7 @@ import org.apache.rocketmq.test.util.data.collect.DataCollector;
 
 public class MapDataCollectorImpl implements DataCollector {
 
-    private Map<Object, AtomicInteger> datas = new ConcurrentHashMap<Object, AtomicInteger>();
+    private final Map<Object, AtomicInteger> datas = new ConcurrentHashMap<Object, AtomicInteger>();
     private boolean lock = false;
 
     public MapDataCollectorImpl() {

@@ -171,7 +171,7 @@ import com.alibaba.fastjson.JSON;
 public class MQClientAPIImpl {
 
     private final static InternalLogger log = ClientLogger.getLog();
-    private static boolean sendSmartMsg =
+    private static final boolean sendSmartMsg =
         Boolean.parseBoolean(System.getProperty("org.apache.rocketmq.client.sendSmartMsg", "true"));
 
     static {
@@ -182,7 +182,7 @@ public class MQClientAPIImpl {
     private final TopAddressing topAddressing;
     private final ClientRemotingProcessor clientRemotingProcessor;
     private String nameSrvAddr = null;
-    private ClientConfig clientConfig;
+    private final ClientConfig clientConfig;
 
     public MQClientAPIImpl(final NettyClientConfig nettyClientConfig,
         final ClientRemotingProcessor clientRemotingProcessor,
@@ -708,11 +708,7 @@ public class MQClientAPIImpl {
         if (regionId == null || regionId.isEmpty()) {
             regionId = MixAll.DEFAULT_TRACE_REGION_ID;
         }
-        if (traceOn != null && traceOn.equals("false")) {
-            sendResult.setTraceOn(false);
-        } else {
-            sendResult.setTraceOn(true);
-        }
+        sendResult.setTraceOn(traceOn == null || !traceOn.equals("false"));
         sendResult.setRegionId(regionId);
         return sendResult;
     }

@@ -71,15 +71,15 @@ public class SendMessageProcessorTest {
     @Mock
     private ChannelHandlerContext handlerContext;
     @Spy
-    private BrokerController brokerController = new BrokerController(new BrokerConfig(), new NettyServerConfig(), new NettyClientConfig(), new MessageStoreConfig());
+    private final BrokerController brokerController = new BrokerController(new BrokerConfig(), new NettyServerConfig(), new NettyClientConfig(), new MessageStoreConfig());
     @Mock
     private MessageStore messageStore;
 
     @Mock
     private TransactionalMessageService transactionMsgService;
 
-    private String topic = "FooBar";
-    private String group = "FooBarGroup";
+    private final String topic = "FooBar";
+    private final String group = "FooBarGroup";
 
     @Before
     public void init() {

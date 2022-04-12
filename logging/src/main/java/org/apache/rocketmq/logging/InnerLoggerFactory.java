@@ -45,7 +45,7 @@ public class InnerLoggerFactory extends InternalLoggerFactory {
 
     public static class InnerLogger implements InternalLogger {
 
-        private Logger logger;
+        private final Logger logger;
 
         public InnerLogger(String name) {
             logger = Logger.getLogger(name);
@@ -175,9 +175,9 @@ public class InnerLoggerFactory extends InternalLoggerFactory {
 
 
     public static class FormattingTuple {
-        private String message;
-        private Throwable throwable;
-        private Object[] argArray;
+        private final String message;
+        private final Throwable throwable;
+        private final Object[] argArray;
 
         public FormattingTuple(String message) {
             this(message, null, null);
@@ -258,29 +258,29 @@ public class InnerLoggerFactory extends InternalLoggerFactory {
                             return new FormattingTuple(messagePattern, argArray, throwableCandidate);
                         }
 
-                        sbuf.append(messagePattern.substring(i, messagePattern.length()));
+                        sbuf.append(messagePattern.substring(i));
                         return new FormattingTuple(sbuf.toString(), argArray, throwableCandidate);
                     }
 
                     if (isEscapeDelimeter(messagePattern, j)) {
                         if (!isDoubleEscaped(messagePattern, j)) {
                             --len;
-                            sbuf.append(messagePattern.substring(i, j - 1));
+                            sbuf.append(messagePattern, i, j - 1);
                             sbuf.append('{');
                             i = j + 1;
                         } else {
-                            sbuf.append(messagePattern.substring(i, j - 1));
+                            sbuf.append(messagePattern, i, j - 1);
                             deeplyAppendParameter(sbuf, argArray[len], null);
                             i = j + 2;
                         }
                     } else {
-                        sbuf.append(messagePattern.substring(i, j));
+                        sbuf.append(messagePattern, i, j);
                         deeplyAppendParameter(sbuf, argArray[len], null);
                         i = j + 2;
                     }
                 }
 
-                sbuf.append(messagePattern.substring(i, messagePattern.length()));
+                sbuf.append(messagePattern.substring(i));
                 if (len < argArray.length - 1) {
                     return new FormattingTuple(sbuf.toString(), argArray, throwableCandidate);
                 } else {

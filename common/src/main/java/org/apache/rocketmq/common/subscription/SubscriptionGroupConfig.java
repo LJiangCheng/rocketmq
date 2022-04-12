@@ -155,9 +155,7 @@ public class SubscriptionGroupConfig {
             return false;
         if (whichBrokerWhenConsumeSlowly != other.whichBrokerWhenConsumeSlowly)
             return false;
-        if (notifyConsumerIdsChangedEnable != other.notifyConsumerIdsChangedEnable)
-            return false;
-        return true;
+        return notifyConsumerIdsChangedEnable == other.notifyConsumerIdsChangedEnable;
     }
 
     @Override

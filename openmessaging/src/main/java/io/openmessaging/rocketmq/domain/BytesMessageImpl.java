@@ -24,8 +24,8 @@ import io.openmessaging.exception.OMSMessageFormatException;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 public class BytesMessageImpl implements BytesMessage {
-    private KeyValue sysHeaders;
-    private KeyValue userHeaders;
+    private final KeyValue sysHeaders;
+    private final KeyValue userHeaders;
     private byte[] body;
 
     public BytesMessageImpl() {

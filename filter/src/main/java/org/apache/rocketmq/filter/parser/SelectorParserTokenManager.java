@@ -635,7 +635,7 @@ public class SelectorParserTokenManager implements SelectorParserConstants {
                 }
                 while (i != startsAt);
             } else {
-                int hiByte = (int) (curChar >> 8);
+                int hiByte = curChar >> 8;
                 int i1 = hiByte >> 6;
                 long l1 = 1L << (hiByte & 077);
                 int i2 = (curChar & 0xff) >> 6;
@@ -711,9 +711,7 @@ public class SelectorParserTokenManager implements SelectorParserConstants {
             case 0:
                 return (JJ_BIT_VEC_2[i2] & l2) != 0L;
             default:
-                if ((JJ_BIT_VEC_0[i1] & l1) != 0L)
-                    return true;
-                return false;
+                return (JJ_BIT_VEC_0[i1] & l1) != 0L;
         }
     }
 

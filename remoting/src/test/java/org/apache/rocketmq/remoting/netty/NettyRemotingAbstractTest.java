@@ -32,7 +32,7 @@ import static org.mockito.Mockito.when;
 @RunWith(MockitoJUnitRunner.class)
 public class NettyRemotingAbstractTest {
     @Spy
-    private NettyRemotingAbstract remotingAbstract = new NettyRemotingClient(new NettyClientConfig());
+    private final NettyRemotingAbstract remotingAbstract = new NettyRemotingClient(new NettyClientConfig());
 
     @Test
     public void testProcessResponseCommand() throws InterruptedException {

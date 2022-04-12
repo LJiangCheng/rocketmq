@@ -19,7 +19,7 @@ package org.apache.rocketmq.common.filter.impl;
 
 public abstract class Op {
 
-    private String symbol;
+    private final String symbol;
 
     protected Op(String symbol) {
         this.symbol = symbol;

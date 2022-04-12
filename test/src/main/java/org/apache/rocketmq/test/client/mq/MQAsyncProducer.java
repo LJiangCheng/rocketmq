@@ -23,12 +23,12 @@ import org.apache.rocketmq.test.clientinterface.AbstractMQProducer;
 import org.apache.rocketmq.test.util.TestUtil;
 
 public class MQAsyncProducer {
-    private static Logger logger = Logger.getLogger(MQAsyncProducer.class);
+    private static final Logger logger = Logger.getLogger(MQAsyncProducer.class);
     private AbstractMQProducer producer = null;
-    private long msgNum;
-    private int intervalMills;
-    private Thread sendT;
-    private AtomicBoolean bPause = new AtomicBoolean(false);
+    private final long msgNum;
+    private final int intervalMills;
+    private final Thread sendT;
+    private final AtomicBoolean bPause = new AtomicBoolean(false);
 
     public MQAsyncProducer(final AbstractMQProducer producer, final long msgNum,
         final int intervalMills) {

@@ -15,6 +15,7 @@ import org.slf4j.LoggerFactory;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,7 +26,7 @@ public class ServiceProvider {
     /**
      * A reference to the classloader that loaded this class. It's more efficient to compute it once and cache it here.
      */
-    private static ClassLoader thisClassLoader;
+    private static final ClassLoader thisClassLoader;
 
     /**
      * JDK1.3+ <a href= "http://java.sun.com/j2se/1.3/docs/guide/jar/jar.html#Service%20Provider" > 'Service Provider' specification</a>.
@@ -102,11 +103,7 @@ public class ServiceProvider {
             final InputStream is = getResourceAsStream(getContextClassLoader(), name);
             if (is != null) {
                 BufferedReader reader;
-                try {
-                    reader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
-                } catch (java.io.UnsupportedEncodingException e) {
-                    reader = new BufferedReader(new InputStreamReader(is));
-                }
+                reader = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8));
                 String serviceName = reader.readLine();
                 while (serviceName != null && !"".equals(serviceName)) {
                     LOG.info(
@@ -116,7 +113,7 @@ public class ServiceProvider {
                         names.add(serviceName);
                     }
 
-                    services.add((T)initService(getContextClassLoader(), serviceName, clazz));
+                    services.add(initService(getContextClassLoader(), serviceName, clazz));
 
                     serviceName = reader.readLine();
                 }
@@ -136,11 +133,7 @@ public class ServiceProvider {
         if (is != null) {
             BufferedReader reader;
             try {
-                try {
-                    reader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
-                } catch (java.io.UnsupportedEncodingException e) {
-                    reader = new BufferedReader(new InputStreamReader(is));
-                }
+                reader = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8));
                 String serviceName = reader.readLine();
                 reader.close();
                 if (serviceName != null && !"".equals(serviceName)) {
@@ -170,8 +163,8 @@ public class ServiceProvider {
                         // This indicates a problem with the ClassLoader tree. An incompatible ClassLoader was used to load the implementation.
                         LOG.error(
                             "Class {} loaded from classloader {} does not extend {} as loaded by this classloader.",
-                            new Object[] {serviceClazz.getName(),
-                                objectId(serviceClazz.getClassLoader()), clazz.getName()});
+                                serviceClazz.getName(),
+                                objectId(serviceClazz.getClassLoader()), clazz.getName());
                     }
                     return (T)serviceClazz.newInstance();
                 } catch (ClassNotFoundException ex) {

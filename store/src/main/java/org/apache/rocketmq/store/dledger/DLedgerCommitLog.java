@@ -723,10 +723,10 @@ public class DLedgerCommitLog extends CommitLog {
 
 
     class EncodeResult {
-        private String queueOffsetKey;
+        private final String queueOffsetKey;
         private ByteBuffer data;
         private List<byte[]> batchData;
-        private AppendMessageStatus status;
+        private final AppendMessageStatus status;
         private int totalMsgLen;
 
         public EncodeResult(AppendMessageStatus status, ByteBuffer data, String queueOffsetKey) {
@@ -976,7 +976,7 @@ public class DLedgerCommitLog extends CommitLog {
 
     public static class DLedgerSelectMappedBufferResult extends SelectMappedBufferResult {
 
-        private SelectMmapBufferResult sbr;
+        private final SelectMmapBufferResult sbr;
 
         public DLedgerSelectMappedBufferResult(SelectMmapBufferResult sbr) {
             super(sbr.getStartOffset(), sbr.getByteBuffer(), sbr.getSize(), null);

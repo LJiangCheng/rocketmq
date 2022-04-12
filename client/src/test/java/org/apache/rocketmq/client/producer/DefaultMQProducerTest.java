@@ -69,7 +69,7 @@ import static org.mockito.Mockito.when;
 @RunWith(MockitoJUnitRunner.class)
 public class DefaultMQProducerTest {
     @Spy
-    private MQClientInstance mQClientFactory = MQClientManager.getInstance().getOrCreateMQClientInstance(new ClientConfig());
+    private final MQClientInstance mQClientFactory = MQClientManager.getInstance().getOrCreateMQClientInstance(new ClientConfig());
     @Mock
     private MQClientAPIImpl mQClientAPIImpl;
     @Mock
@@ -79,8 +79,8 @@ public class DefaultMQProducerTest {
     private Message message;
     private Message zeroMsg;
     private Message bigMessage;
-    private String topic = "FooBar";
-    private String producerGroupPrefix = "FooBar_PID";
+    private final String topic = "FooBar";
+    private final String producerGroupPrefix = "FooBar_PID";
 
     @Before
     public void init() throws Exception {

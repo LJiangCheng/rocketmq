@@ -51,7 +51,7 @@ public class ConsumerFilterManager extends ConfigManager {
         filterDataByTopic = new ConcurrentHashMap<String/*Topic*/, FilterDataMapByTopic>(256);
 
     private transient BrokerController brokerController;
-    private transient BloomFilter bloomFilter;
+    private final transient BloomFilter bloomFilter;
 
     public ConsumerFilterManager() {
         // just for test

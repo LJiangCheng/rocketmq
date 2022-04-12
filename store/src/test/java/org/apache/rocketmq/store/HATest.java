@@ -51,7 +51,7 @@ import static org.junit.Assert.*;
 public class HATest {
     private final String StoreMessage = "Once, there was a chance for me!";
     private int QUEUE_TOTAL = 100;
-    private AtomicInteger QueueId = new AtomicInteger(0);
+    private final AtomicInteger QueueId = new AtomicInteger(0);
     private SocketAddress BornHost;
     private SocketAddress StoreHost;
     private byte[] MessageBody;
@@ -60,10 +60,10 @@ public class HATest {
     private MessageStore slaveMessageStore;
     private MessageStoreConfig masterMessageStoreConfig;
     private MessageStoreConfig slaveStoreConfig;
-    private BrokerStatsManager brokerStatsManager = new BrokerStatsManager("simpleTest", true);
-    private String storePathRootParentDir = System.getProperty("user.home") + File.separator +
+    private final BrokerStatsManager brokerStatsManager = new BrokerStatsManager("simpleTest", true);
+    private final String storePathRootParentDir = System.getProperty("user.home") + File.separator +
             UUID.randomUUID().toString().replace("-", "");
-    private String storePathRootDir = storePathRootParentDir + File.separator + "store";
+    private final String storePathRootDir = storePathRootParentDir + File.separator + "store";
     @Before
     public void init() throws Exception {
         StoreHost = new InetSocketAddress(InetAddress.getLocalHost(), 8123);

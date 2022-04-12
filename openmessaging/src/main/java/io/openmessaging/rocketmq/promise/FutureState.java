@@ -33,7 +33,7 @@ public enum FutureState {
 
     public final int value;
 
-    private FutureState(int value) {
+    FutureState(int value) {
         this.value = value;
     }
 

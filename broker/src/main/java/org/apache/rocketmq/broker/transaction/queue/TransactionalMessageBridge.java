@@ -243,7 +243,7 @@ public class TransactionalMessageBridge {
         String queueOffsetFromPrepare = msgExt.getUserProperty(MessageConst.PROPERTY_TRANSACTION_PREPARED_QUEUE_OFFSET);
         if (null != queueOffsetFromPrepare) {
             MessageAccessor.putProperty(msgInner, MessageConst.PROPERTY_TRANSACTION_PREPARED_QUEUE_OFFSET,
-                String.valueOf(queueOffsetFromPrepare));
+                    queueOffsetFromPrepare);
         } else {
             MessageAccessor.putProperty(msgInner, MessageConst.PROPERTY_TRANSACTION_PREPARED_QUEUE_OFFSET,
                 String.valueOf(msgExt.getQueueOffset()));

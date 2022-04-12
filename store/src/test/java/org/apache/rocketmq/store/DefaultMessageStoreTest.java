@@ -54,7 +54,7 @@ import static org.mockito.Mockito.mock;
 public class DefaultMessageStoreTest {
     private final String StoreMessage = "Once, there was a chance for me!";
     private int QUEUE_TOTAL = 100;
-    private AtomicInteger QueueId = new AtomicInteger(0);
+    private final AtomicInteger QueueId = new AtomicInteger(0);
     private SocketAddress BornHost;
     private SocketAddress StoreHost;
     private byte[] MessageBody;

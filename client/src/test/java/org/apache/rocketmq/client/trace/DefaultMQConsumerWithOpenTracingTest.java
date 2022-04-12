@@ -90,8 +90,8 @@ import static org.mockito.Mockito.when;
 public class DefaultMQConsumerWithOpenTracingTest {
     private String consumerGroup;
 
-    private String topic = "FooBar";
-    private String brokerName = "BrokerA";
+    private final String topic = "FooBar";
+    private final String brokerName = "BrokerA";
     private MQClientInstance mQClientFactory;
 
     @Mock
@@ -123,7 +123,7 @@ public class DefaultMQConsumerWithOpenTracingTest {
                     messageClientExt.setOffsetMsgId("234");
                     messageClientExt.setBornHost(new InetSocketAddress(8080));
                     messageClientExt.setStoreHost(new InetSocketAddress(8080));
-                    PullResult pullResult = createPullResult(requestHeader, PullStatus.FOUND, Collections.<MessageExt>singletonList(messageClientExt));
+                    PullResult pullResult = createPullResult(requestHeader, PullStatus.FOUND, Collections.singletonList(messageClientExt));
                     ((PullCallback) mock.getArgument(4)).onSuccess(pullResult);
                     return pullResult;
                 }

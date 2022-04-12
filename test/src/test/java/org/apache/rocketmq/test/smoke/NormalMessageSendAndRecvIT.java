@@ -31,7 +31,7 @@ import org.junit.Test;
 import static com.google.common.truth.Truth.assertThat;
 
 public class NormalMessageSendAndRecvIT extends BaseConf {
-    private static Logger logger = Logger.getLogger(NormalMessageSendAndRecvIT.class);
+    private static final Logger logger = Logger.getLogger(NormalMessageSendAndRecvIT.class);
     private RMQNormalConsumer consumer = null;
     private RMQNormalProducer producer = null;
     private String topic = null;
@@ -46,7 +46,7 @@ public class NormalMessageSendAndRecvIT extends BaseConf {
 
     @After
     public void tearDown() {
-        super.shutdown();
+        shutdown();
     }
 
     @Test

@@ -34,7 +34,7 @@ import org.junit.Test;
 import static com.google.common.truth.Truth.assertThat;
 
 public class OrderMsgIT extends BaseConf {
-    private static Logger logger = Logger.getLogger(OrderMsgIT.class);
+    private static final Logger logger = Logger.getLogger(OrderMsgIT.class);
     private RMQNormalProducer producer = null;
     private RMQNormalConsumer consumer = null;
     private String topic = null;

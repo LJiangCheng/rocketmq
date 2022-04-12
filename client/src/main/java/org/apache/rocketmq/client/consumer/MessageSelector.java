@@ -34,12 +34,12 @@ public class MessageSelector {
     /**
      * @see org.apache.rocketmq.common.filter.ExpressionType
      */
-    private String type;
+    private final String type;
 
     /**
      * expression content.
      */
-    private String expression;
+    private final String expression;
 
     private MessageSelector(String type, String expression) {
         this.type = type;

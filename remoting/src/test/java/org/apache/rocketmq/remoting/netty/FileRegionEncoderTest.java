@@ -52,7 +52,7 @@ public class FileRegionEncoderTest {
         Assert.assertEquals(0, fileRegion.transfered());
         Assert.assertEquals(dataLength, fileRegion.count());
         Assert.assertTrue(channel.writeOutbound(fileRegion));
-        ByteBuf out = (ByteBuf) channel.readOutbound();
+        ByteBuf out = channel.readOutbound();
         byte[] arr = new byte[out.readableBytes()];
         out.getBytes(0, arr);
         Assert.assertArrayEquals("Data should be identical", data, arr);

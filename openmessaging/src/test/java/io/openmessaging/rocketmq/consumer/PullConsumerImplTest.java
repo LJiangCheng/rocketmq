@@ -40,7 +40,7 @@ import static org.mockito.Mockito.when;
 @RunWith(MockitoJUnitRunner.class)
 public class PullConsumerImplTest {
     private PullConsumer consumer;
-    private String queueName = "HELLO_QUEUE";
+    private final String queueName = "HELLO_QUEUE";
 
     @Mock
     private DefaultMQPullConsumer rocketmqPullConsumer;
@@ -83,7 +83,7 @@ public class PullConsumerImplTest {
 
         Message message = consumer.receive();
         assertThat(message.sysHeaders().getString(Message.BuiltinKeys.MESSAGE_ID)).isEqualTo("NewMsgId");
-        assertThat(((BytesMessage) message).getBody(byte[].class)).isEqualTo(testBody);
+        assertThat(message.getBody(byte[].class)).isEqualTo(testBody);
     }
 
     @Test

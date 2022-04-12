@@ -78,7 +78,7 @@ public class StoreTestUtil {
     }
 
 
-    public static void flushConsumeIndex(DefaultMessageStore store) throws NoSuchFieldException, Exception {
+    public static void flushConsumeIndex(DefaultMessageStore store) throws Exception {
         Field field = store.getClass().getDeclaredField("indexService");
         field.setAccessible(true);
         IndexService indexService = (IndexService) field.get(store);

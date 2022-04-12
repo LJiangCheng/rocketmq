@@ -31,8 +31,8 @@ import org.apache.rocketmq.logging.InternalLoggerFactory;
 public class ConcurrentTreeMap<K, V> {
     private static final InternalLogger log = InternalLoggerFactory.getLogger(LoggerName.BROKER_LOGGER_NAME);
     private final ReentrantLock lock;
-    private TreeMap<K, V> tree;
-    private RoundQueue<K> roundQueue;
+    private final TreeMap<K, V> tree;
+    private final RoundQueue<K> roundQueue;
 
     public ConcurrentTreeMap(int capacity, Comparator<? super K> comparator) {
         tree = new TreeMap<K, V>(comparator);

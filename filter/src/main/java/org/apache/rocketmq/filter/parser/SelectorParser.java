@@ -549,8 +549,7 @@ public class SelectorParser implements SelectorParserConstants {
                 jjScanpos = xsp;
                 if (jj_3R_10()) {
                     jjScanpos = xsp;
-                    if (jj_3R_11())
-                        return true;
+                    return jj_3R_11();
                 }
             }
         }
@@ -560,15 +559,11 @@ public class SelectorParser implements SelectorParserConstants {
     private boolean jj_3R_43() {
         if (jj_scan_token(29))
             return true;
-        if (jj_3R_27())
-            return true;
-        return false;
+        return jj_3R_27();
     }
 
     private boolean jj_3R_24() {
-        if (jj_scan_token(NULL))
-            return true;
-        return false;
+        return jj_scan_token(NULL);
     }
 
     private boolean jj_3R_35() {
@@ -576,37 +571,27 @@ public class SelectorParser implements SelectorParserConstants {
             return true;
         if (jj_scan_token(NOT))
             return true;
-        if (jj_scan_token(NULL))
-            return true;
-        return false;
+        return jj_scan_token(NULL);
     }
 
     private boolean jj_3_1() {
         if (jj_scan_token(IS))
             return true;
-        if (jj_scan_token(NULL))
-            return true;
-        return false;
+        return jj_scan_token(NULL);
     }
 
     private boolean jj_3R_23() {
-        if (jj_scan_token(FALSE))
-            return true;
-        return false;
+        return jj_scan_token(FALSE);
     }
 
     private boolean jj_3R_34() {
         if (jj_scan_token(23))
             return true;
-        if (jj_3R_30())
-            return true;
-        return false;
+        return jj_3R_30();
     }
 
     private boolean jj_3R_22() {
-        if (jj_scan_token(TRUE))
-            return true;
-        return false;
+        return jj_scan_token(TRUE);
     }
 
     private boolean jj_3_3() {
@@ -626,9 +611,7 @@ public class SelectorParser implements SelectorParserConstants {
                 break;
             }
         }
-        if (jj_scan_token(30))
-            return true;
-        return false;
+        return jj_scan_token(30);
     }
 
     private boolean jj_3R_31() {
@@ -640,8 +623,7 @@ public class SelectorParser implements SelectorParserConstants {
                 jjScanpos = xsp;
                 if (jj_3_1()) {
                     jjScanpos = xsp;
-                    if (jj_3R_35())
-                        return true;
+                    return jj_3R_35();
                 }
             }
         }
@@ -651,29 +633,21 @@ public class SelectorParser implements SelectorParserConstants {
     private boolean jj_3R_33() {
         if (jj_scan_token(22))
             return true;
-        if (jj_3R_30())
-            return true;
-        return false;
+        return jj_3R_30();
     }
 
     private boolean jj_3R_42() {
         if (jj_scan_token(29))
             return true;
-        if (jj_3R_27())
-            return true;
-        return false;
+        return jj_3R_27();
     }
 
     private boolean jj_3R_21() {
-        if (jj_scan_token(FLOATING_POINT_LITERAL))
-            return true;
-        return false;
+        return jj_scan_token(FLOATING_POINT_LITERAL);
     }
 
     private boolean jj_3R_20() {
-        if (jj_scan_token(DECIMAL_LITERAL))
-            return true;
-        return false;
+        return jj_scan_token(DECIMAL_LITERAL);
     }
 
     private boolean jj_3R_28() {
@@ -705,23 +679,17 @@ public class SelectorParser implements SelectorParserConstants {
                 break;
             }
         }
-        if (jj_scan_token(30))
-            return true;
-        return false;
+        return jj_scan_token(30);
     }
 
     private boolean jj_3R_19() {
-        if (jj_3R_27())
-            return true;
-        return false;
+        return jj_3R_27();
     }
 
     private boolean jj_3R_29() {
         if (jj_scan_token(AND))
             return true;
-        if (jj_3R_28())
-            return true;
-        return false;
+        return jj_3R_28();
     }
 
     private boolean jj_3R_16() {
@@ -737,8 +705,7 @@ public class SelectorParser implements SelectorParserConstants {
                         jjScanpos = xsp;
                         if (jj_3R_23()) {
                             jjScanpos = xsp;
-                            if (jj_3R_24())
-                                return true;
+                            return jj_3R_24();
                         }
                     }
                 }
@@ -756,9 +723,7 @@ public class SelectorParser implements SelectorParserConstants {
             return true;
         if (jj_scan_token(AND))
             return true;
-        if (jj_3R_7())
-            return true;
-        return false;
+        return jj_3R_7();
     }
 
     private boolean jj_3R_40() {
@@ -768,9 +733,7 @@ public class SelectorParser implements SelectorParserConstants {
             return true;
         if (jj_scan_token(AND))
             return true;
-        if (jj_3R_7())
-            return true;
-        return false;
+        return jj_3R_7();
     }
 
     private boolean jj_3R_25() {
@@ -790,9 +753,7 @@ public class SelectorParser implements SelectorParserConstants {
     private boolean jj_3R_39() {
         if (jj_scan_token(27))
             return true;
-        if (jj_3R_7())
-            return true;
-        return false;
+        return jj_3R_7();
     }
 
     private boolean jj_3R_15() {
@@ -800,51 +761,37 @@ public class SelectorParser implements SelectorParserConstants {
             return true;
         if (jj_3R_18())
             return true;
-        if (jj_scan_token(30))
-            return true;
-        return false;
+        return jj_scan_token(30);
     }
 
     private boolean jj_3R_14() {
-        if (jj_3R_17())
-            return true;
-        return false;
+        return jj_3R_17();
     }
 
     private boolean jj_3R_38() {
         if (jj_scan_token(26))
             return true;
-        if (jj_3R_7())
-            return true;
-        return false;
+        return jj_3R_7();
     }
 
     private boolean jj_3R_13() {
-        if (jj_3R_16())
-            return true;
-        return false;
+        return jj_3R_16();
     }
 
     private boolean jj_3R_26() {
         if (jj_scan_token(OR))
             return true;
-        if (jj_3R_25())
-            return true;
-        return false;
+        return jj_3R_25();
     }
 
     private boolean jj_3R_17() {
-        if (jj_scan_token(ID))
-            return true;
-        return false;
+        return jj_scan_token(ID);
     }
 
     private boolean jj_3R_37() {
         if (jj_scan_token(25))
             return true;
-        if (jj_3R_7())
-            return true;
-        return false;
+        return jj_3R_7();
     }
 
     private boolean jj_3R_12() {
@@ -854,8 +801,7 @@ public class SelectorParser implements SelectorParserConstants {
             jjScanpos = xsp;
             if (jj_3R_14()) {
                 jjScanpos = xsp;
-                if (jj_3R_15())
-                    return true;
+                return jj_3R_15();
             }
         }
         return false;
@@ -878,8 +824,7 @@ public class SelectorParser implements SelectorParserConstants {
                                 jjScanpos = xsp;
                                 if (jj_3R_41()) {
                                     jjScanpos = xsp;
-                                    if (jj_3_3())
-                                        return true;
+                                    return jj_3_3();
                                 }
                             }
                         }
@@ -893,15 +838,11 @@ public class SelectorParser implements SelectorParserConstants {
     private boolean jj_3R_36() {
         if (jj_scan_token(24))
             return true;
-        if (jj_3R_7())
-            return true;
-        return false;
+        return jj_3R_7();
     }
 
     private boolean jj_3R_11() {
-        if (jj_3R_12())
-            return true;
-        return false;
+        return jj_3R_12();
     }
 
     private boolean jj_3R_18() {
@@ -921,31 +862,23 @@ public class SelectorParser implements SelectorParserConstants {
     private boolean jj_3_4() {
         if (jj_scan_token(31))
             return true;
-        if (jj_3R_7())
-            return true;
-        return false;
+        return jj_3R_7();
     }
 
     private boolean jj_3R_10() {
         if (jj_scan_token(NOT))
             return true;
-        if (jj_3R_7())
-            return true;
-        return false;
+        return jj_3R_7();
     }
 
     private boolean jj_3R_9() {
         if (jj_scan_token(32))
             return true;
-        if (jj_3R_7())
-            return true;
-        return false;
+        return jj_3R_7();
     }
 
     private boolean jj_3R_27() {
-        if (jj_scan_token(STRING_LITERAL))
-            return true;
-        return false;
+        return jj_scan_token(STRING_LITERAL);
     }
 
     private boolean jj_3R_30() {
@@ -965,9 +898,7 @@ public class SelectorParser implements SelectorParserConstants {
     private boolean jj_3R_8() {
         if (jj_scan_token(31))
             return true;
-        if (jj_3R_7())
-            return true;
-        return false;
+        return jj_3R_7();
     }
 
     /**
@@ -1214,10 +1145,10 @@ public class SelectorParser implements SelectorParserConstants {
             return jjNtk = jjNt.kind;
     }
 
-    private java.util.List<int[]> jjExpentries = new java.util.ArrayList<int[]>();
+    private final java.util.List<int[]> jjExpentries = new java.util.ArrayList<int[]>();
     private int[] jjExpentry;
     private int jjKind = -1;
-    private int[] jjLasttokens = new int[100];
+    private final int[] jjLasttokens = new int[100];
     private int jjEndpos;
 
     private void jj_add_error_token(int kind, int pos) {

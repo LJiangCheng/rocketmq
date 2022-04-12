@@ -56,7 +56,7 @@ public class DefaultLitePullConsumer extends ClientConfig implements LitePullCon
     /**
      * Long polling mode, the Consumer connection max suspend time, it is not recommended to modify
      */
-    private long brokerSuspendMaxTimeMillis = 1000 * 20;
+    private final long brokerSuspendMaxTimeMillis = 1000 * 20;
 
     /**
      * Long polling mode, the Consumer connection timeout(must greater than brokerSuspendMaxTimeMillis), it is not

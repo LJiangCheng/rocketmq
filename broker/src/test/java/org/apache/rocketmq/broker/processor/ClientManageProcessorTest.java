@@ -50,16 +50,16 @@ import static org.mockito.Mockito.when;
 public class ClientManageProcessorTest {
     private ClientManageProcessor clientManageProcessor;
     @Spy
-    private BrokerController brokerController = new BrokerController(new BrokerConfig(), new NettyServerConfig(), new NettyClientConfig(), new MessageStoreConfig());
+    private final BrokerController brokerController = new BrokerController(new BrokerConfig(), new NettyServerConfig(), new NettyClientConfig(), new MessageStoreConfig());
     @Mock
     private ChannelHandlerContext handlerContext;
     @Mock
     private Channel channel;
 
     private ClientChannelInfo clientChannelInfo;
-    private String clientId = UUID.randomUUID().toString();
-    private String group = "FooBarGroup";
-    private String topic = "FooBar";
+    private final String clientId = UUID.randomUUID().toString();
+    private final String group = "FooBarGroup";
+    private final String topic = "FooBar";
 
     @Before
     public void init() {

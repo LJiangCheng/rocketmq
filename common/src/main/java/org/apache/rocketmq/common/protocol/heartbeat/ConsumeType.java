@@ -26,7 +26,7 @@ public enum ConsumeType {
 
     CONSUME_PASSIVELY("PUSH");
 
-    private String typeCN;
+    private final String typeCN;
 
     ConsumeType(String typeCN) {
         this.typeCN = typeCN;

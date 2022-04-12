@@ -23,10 +23,10 @@ import org.apache.rocketmq.store.config.MessageStoreConfig;
 import org.apache.rocketmq.store.stats.BrokerStatsManager;
 
 public class MessageStorePluginContext {
-    private MessageStoreConfig messageStoreConfig;
-    private BrokerStatsManager brokerStatsManager;
-    private MessageArrivingListener messageArrivingListener;
-    private BrokerConfig brokerConfig;
+    private final MessageStoreConfig messageStoreConfig;
+    private final BrokerStatsManager brokerStatsManager;
+    private final MessageArrivingListener messageArrivingListener;
+    private final BrokerConfig brokerConfig;
 
     public MessageStorePluginContext(MessageStoreConfig messageStoreConfig,
         BrokerStatsManager brokerStatsManager, MessageArrivingListener messageArrivingListener,

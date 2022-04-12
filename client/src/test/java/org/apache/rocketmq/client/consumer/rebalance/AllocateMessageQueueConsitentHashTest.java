@@ -226,7 +226,7 @@ public class AllocateMessageQueueConsitentHashTest {
     private List<String> createConsumerIdList(int size) {
         List<String> consumerIdList = new ArrayList<String>(size);
         for (int i = 0; i < size; i++) {
-            consumerIdList.add(CID_PREFIX + String.valueOf(i));
+            consumerIdList.add(CID_PREFIX + i);
         }
         return consumerIdList;
     }

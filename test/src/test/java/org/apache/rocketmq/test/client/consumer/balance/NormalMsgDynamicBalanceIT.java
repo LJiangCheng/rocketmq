@@ -33,7 +33,7 @@ import org.junit.Test;
 import static com.google.common.truth.Truth.assertThat;
 
 public class NormalMsgDynamicBalanceIT extends BaseConf {
-    private static Logger logger = Logger.getLogger(NormalMsgStaticBalanceIT.class);
+    private static final Logger logger = Logger.getLogger(NormalMsgStaticBalanceIT.class);
     private RMQNormalProducer producer = null;
     private String topic = null;
 
@@ -46,7 +46,7 @@ public class NormalMsgDynamicBalanceIT extends BaseConf {
 
     @After
     public void tearDown() {
-        super.shutdown();
+        shutdown();
     }
 
     @Test

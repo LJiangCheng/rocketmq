@@ -33,8 +33,8 @@ public class TopAddressing {
     private static final InternalLogger log = InternalLoggerFactory.getLogger(LoggerName.COMMON_LOGGER_NAME);
 
     private String nsAddr;
-    private String wsAddr;
-    private String unitName;
+    private final String wsAddr;
+    private final String unitName;
 
     public TopAddressing(final String wsAddr) {
         this(wsAddr, null);

@@ -24,7 +24,7 @@ import org.apache.rocketmq.test.factory.ConsumerFactory;
 import org.apache.rocketmq.test.listener.AbstractListener;
 
 public class BaseBroadCastIT extends BaseConf {
-    private static Logger logger = Logger.getLogger(BaseBroadCastIT.class);
+    private static final Logger logger = Logger.getLogger(BaseBroadCastIT.class);
 
     public static RMQBroadCastConsumer getBroadCastConsumer(String nsAddr, String topic,
         String subExpression,

@@ -30,8 +30,8 @@ public class DefaultPromise<V> implements Promise<V> {
     private final Object lock = new Object();
     private volatile FutureState state = FutureState.DOING;
     private V result = null;
-    private long timeout;
-    private long createTime;
+    private final long timeout;
+    private final long createTime;
     private Throwable exception = null;
     private List<FutureListener<V>> promiseListenerList;
 

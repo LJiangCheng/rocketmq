@@ -29,9 +29,9 @@ import org.apache.rocketmq.store.MappedFile;
 
 public class IndexFile {
     private static final InternalLogger log = InternalLoggerFactory.getLogger(LoggerName.STORE_LOGGER_NAME);
-    private static int hashSlotSize = 4;
-    private static int indexSize = 20;
-    private static int invalidIndex = 0;
+    private static final int hashSlotSize = 4;
+    private static final int indexSize = 20;
+    private static final int invalidIndex = 0;
     private final int hashSlotNum;
     private final int indexNum;
     private final MappedFile mappedFile;
@@ -223,7 +223,7 @@ public class IndexFile {
                         int keyHashRead = this.mappedByteBuffer.getInt(absIndexPos);
                         long phyOffsetRead = this.mappedByteBuffer.getLong(absIndexPos + 4);
 
-                        long timeDiff = (long) this.mappedByteBuffer.getInt(absIndexPos + 4 + 8);
+                        long timeDiff = this.mappedByteBuffer.getInt(absIndexPos + 4 + 8);
                         int prevIndexRead = this.mappedByteBuffer.getInt(absIndexPos + 4 + 8 + 4);
 
                         if (timeDiff < 0) {

@@ -92,7 +92,7 @@ public class DefaultLitePullConsumerImpl implements MQConsumerInner {
 
     private OffsetStore offsetStore;
 
-    private RebalanceImpl rebalanceImpl = new RebalanceLitePullImpl(this);
+    private final RebalanceImpl rebalanceImpl = new RebalanceLitePullImpl(this);
 
     private enum SubscriptionType {
         NONE, SUBSCRIBE, ASSIGN
@@ -120,22 +120,22 @@ public class DefaultLitePullConsumerImpl implements MQConsumerInner {
 
     private static final long PULL_TIME_DELAY_MILLS_ON_EXCEPTION = 3 * 1000;
 
-    private DefaultLitePullConsumer defaultLitePullConsumer;
+    private final DefaultLitePullConsumer defaultLitePullConsumer;
 
     private final ConcurrentMap<MessageQueue, PullTaskImpl> taskTable =
         new ConcurrentHashMap<MessageQueue, PullTaskImpl>();
 
-    private AssignedMessageQueue assignedMessageQueue = new AssignedMessageQueue();
+    private final AssignedMessageQueue assignedMessageQueue = new AssignedMessageQueue();
 
     private final BlockingQueue<ConsumeRequest> consumeRequestCache = new LinkedBlockingQueue<ConsumeRequest>();
 
-    private ScheduledThreadPoolExecutor scheduledThreadPoolExecutor;
+    private final ScheduledThreadPoolExecutor scheduledThreadPoolExecutor;
 
     private final ScheduledExecutorService scheduledExecutorService;
 
-    private Map<String, TopicMessageQueueChangeListener> topicMessageQueueChangeListenerMap = new HashMap<String, TopicMessageQueueChangeListener>();
+    private final Map<String, TopicMessageQueueChangeListener> topicMessageQueueChangeListenerMap = new HashMap<String, TopicMessageQueueChangeListener>();
 
-    private Map<String, Set<MessageQueue>> messageQueuesForTopic = new HashMap<String, Set<MessageQueue>>();
+    private final Map<String, Set<MessageQueue>> messageQueuesForTopic = new HashMap<String, Set<MessageQueue>>();
 
     private long consumeRequestFlowControlTimes = 0L;
 

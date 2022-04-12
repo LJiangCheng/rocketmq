@@ -24,8 +24,8 @@ public class Operator extends Op {
     public static final Operator AND = new Operator("&&", 20, true);
     public static final Operator OR = new Operator("||", 15, true);
 
-    private int priority;
-    private boolean compareable;
+    private final int priority;
+    private final boolean compareable;
 
     private Operator(String symbol, int priority, boolean compareable) {
         super(symbol);

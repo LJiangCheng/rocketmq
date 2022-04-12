@@ -27,7 +27,7 @@ public class TagMessage {
     private List<String> tags = null;
     private String topic = null;
     private int msgSize = 0;
-    private Map<String, List<Object>> rmqMsgs = new HashMap<String, List<Object>>();
+    private final Map<String, List<Object>> rmqMsgs = new HashMap<String, List<Object>>();
 
     public TagMessage(String tag, String topic, int msgSize) {
         String[] tags = {tag};

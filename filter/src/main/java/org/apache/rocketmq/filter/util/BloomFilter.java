@@ -20,20 +20,21 @@ package org.apache.rocketmq.filter.util;
 import com.google.common.hash.Hashing;
 
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 
 /**
  * Simple implement of bloom filter.
  */
 public class BloomFilter {
 
-    public static final Charset UTF_8 = Charset.forName("UTF-8");
+    public static final Charset UTF_8 = StandardCharsets.UTF_8;
 
     // as error rate, 10/100 = 0.1
     private int f = 10;
     private int n = 128;
 
     // hash function num, by calculation.
-    private int k;
+    private final int k;
     // bit count, by calculation.
     private int m;
 
@@ -224,14 +225,10 @@ public class BloomFilter {
      * <li>4. {@link org.apache.rocketmq.filter.util.BloomFilterData#getBitPos}'s length is equal to {@code k}</li>
      */
     public boolean isValid(BloomFilterData filterData) {
-        if (filterData == null
-            || filterData.getBitNum() != this.m
-            || filterData.getBitPos() == null
-            || filterData.getBitPos().length != this.k) {
-            return false;
-        }
-
-        return true;
+        return filterData != null
+                && filterData.getBitNum() == this.m
+                && filterData.getBitPos() != null
+                && filterData.getBitPos().length == this.k;
     }
 
     /**
@@ -277,10 +274,7 @@ public class BloomFilter {
             return false;
         if (m != that.m)
             return false;
-        if (n != that.n)
-            return false;
-
-        return true;
+        return n == that.n;
     }
 
     @Override

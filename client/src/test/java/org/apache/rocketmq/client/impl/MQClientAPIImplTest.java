@@ -62,17 +62,17 @@ import static org.mockito.Mockito.doThrow;
 
 @RunWith(MockitoJUnitRunner.class)
 public class MQClientAPIImplTest {
-    private MQClientAPIImpl mqClientAPI = new MQClientAPIImpl(new NettyClientConfig(), null, null, new ClientConfig());
+    private final MQClientAPIImpl mqClientAPI = new MQClientAPIImpl(new NettyClientConfig(), null, null, new ClientConfig());
     @Mock
     private RemotingClient remotingClient;
     @Mock
     private DefaultMQProducerImpl defaultMQProducerImpl;
 
-    private String brokerAddr = "127.0.0.1";
-    private String brokerName = "DefaultBroker";
-    private static String group = "FooBarGroup";
-    private static String topic = "FooBar";
-    private Message msg = new Message("FooBar", new byte[] {});
+    private final String brokerAddr = "127.0.0.1";
+    private final String brokerName = "DefaultBroker";
+    private static final String group = "FooBarGroup";
+    private static final String topic = "FooBar";
+    private final Message msg = new Message("FooBar", new byte[] {});
 
     @Before
     public void init() throws Exception {

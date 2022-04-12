@@ -34,8 +34,8 @@ public class HAConnection {
     private final HAService haService;
     private final SocketChannel socketChannel;
     private final String clientAddr;
-    private WriteSocketService writeSocketService;
-    private ReadSocketService readSocketService;
+    private final WriteSocketService writeSocketService;
+    private final ReadSocketService readSocketService;
 
     private volatile long slaveRequestOffset = -1;
     private volatile long slaveAckOffset = -1;

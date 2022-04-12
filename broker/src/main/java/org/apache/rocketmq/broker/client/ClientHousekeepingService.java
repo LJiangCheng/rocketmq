@@ -31,7 +31,7 @@ public class ClientHousekeepingService implements ChannelEventListener {
     private static final InternalLogger log = InternalLoggerFactory.getLogger(LoggerName.BROKER_LOGGER_NAME);
     private final BrokerController brokerController;
 
-    private ScheduledExecutorService scheduledExecutorService = Executors
+    private final ScheduledExecutorService scheduledExecutorService = Executors
         .newSingleThreadScheduledExecutor(new ThreadFactoryImpl("ClientHousekeepingScheduledThread"));
 
     public ClientHousekeepingService(final BrokerController brokerController) {

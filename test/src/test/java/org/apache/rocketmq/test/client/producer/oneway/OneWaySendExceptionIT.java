@@ -32,8 +32,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class OneWaySendExceptionIT extends BaseConf {
-    private static Logger logger = Logger.getLogger(TagMessageWith1ConsumerIT.class);
-    private static boolean sendFail = false;
+    private static final Logger logger = Logger.getLogger(TagMessageWith1ConsumerIT.class);
+    private static final boolean sendFail = false;
     private String topic = null;
 
     @Before
@@ -44,7 +44,7 @@ public class OneWaySendExceptionIT extends BaseConf {
 
     @After
     public void tearDown() {
-        super.shutdown();
+        shutdown();
     }
 
     @Test(expected = java.lang.NullPointerException.class)

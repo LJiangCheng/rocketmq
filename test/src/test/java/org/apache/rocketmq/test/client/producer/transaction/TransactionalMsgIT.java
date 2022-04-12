@@ -38,7 +38,7 @@ import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class TransactionalMsgIT extends BaseConf {
-    private static Logger logger = Logger.getLogger(TransactionalMsgIT.class);
+    private static final Logger logger = Logger.getLogger(TransactionalMsgIT.class);
     private RMQTransactionalProducer producer = null;
     private RMQNormalConsumer consumer = null;
     private String topic = null;
@@ -53,7 +53,7 @@ public class TransactionalMsgIT extends BaseConf {
 
     @After
     public void tearDown() {
-        super.shutdown();
+        shutdown();
     }
 
     @Test

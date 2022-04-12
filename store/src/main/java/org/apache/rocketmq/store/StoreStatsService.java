@@ -49,7 +49,7 @@ public class StoreStatsService extends ServiceThread {
     private TreeMap<Long/*bucket*/, LongAdder/*times*/> buckets = new TreeMap<>();
     private Map<Long/*bucket*/, LongAdder/*times*/> lastBuckets = new TreeMap<>();
 
-    private static int printTPSInterval = 60 * 1;
+    private static final int printTPSInterval = 60 * 1;
 
     private final LongAdder putMessageFailedTimes = new LongAdder();
 
@@ -68,17 +68,17 @@ public class StoreStatsService extends ServiceThread {
     private final LinkedList<CallSnapshot> transferedMsgCountList = new LinkedList<CallSnapshot>();
     private volatile LongAdder[] putMessageDistributeTime;
     private volatile LongAdder[] lastPutMessageDistributeTime;
-    private long messageStoreBootTimestamp = System.currentTimeMillis();
+    private final long messageStoreBootTimestamp = System.currentTimeMillis();
     private volatile long putMessageEntireTimeMax = 0;
     private volatile long getMessageEntireTimeMax = 0;
     // for putMessageEntireTimeMax
-    private ReentrantLock putLock = new ReentrantLock();
+    private final ReentrantLock putLock = new ReentrantLock();
     // for getMessageEntireTimeMax
-    private ReentrantLock getLock = new ReentrantLock();
+    private final ReentrantLock getLock = new ReentrantLock();
 
     private volatile long dispatchMaxBuffer = 0;
 
-    private ReentrantLock samplingLock = new ReentrantLock();
+    private final ReentrantLock samplingLock = new ReentrantLock();
     private long lastPrintTimestamp = System.currentTimeMillis();
 
     public StoreStatsService() {

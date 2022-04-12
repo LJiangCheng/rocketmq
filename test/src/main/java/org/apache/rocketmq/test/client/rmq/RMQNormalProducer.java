@@ -29,7 +29,7 @@ import org.apache.rocketmq.test.clientinterface.AbstractMQProducer;
 import org.apache.rocketmq.test.sendresult.ResultWrapper;
 
 public class RMQNormalProducer extends AbstractMQProducer {
-    private static Logger logger = Logger.getLogger(RMQNormalProducer.class);
+    private static final Logger logger = Logger.getLogger(RMQNormalProducer.class);
     private DefaultMQProducer producer = null;
     private String nsAddr = null;
 

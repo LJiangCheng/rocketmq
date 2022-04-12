@@ -37,9 +37,9 @@ import static org.mockito.Mockito.when;
 public class LocalFileOffsetStoreTest {
     @Mock
     private MQClientInstance mQClientFactory;
-    private String group = "FooBarGroup";
-    private String topic = "FooBar";
-    private String brokerName = "DefaultBrokerName";
+    private final String group = "FooBarGroup";
+    private final String topic = "FooBar";
+    private final String brokerName = "DefaultBrokerName";
 
     @Before
     public void init() {

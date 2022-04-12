@@ -34,14 +34,14 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 public class RebalanceLitePullImplTest {
-    private MessageQueue mq = new MessageQueue("topic1", "broker1", 0);
-    private MessageQueue retryMq = new MessageQueue(MixAll.RETRY_GROUP_TOPIC_PREFIX + "group", "broker1", 0);
-    private DefaultLitePullConsumerImpl consumerImpl = mock(DefaultLitePullConsumerImpl.class);
-    private RebalanceLitePullImpl rebalanceImpl = new RebalanceLitePullImpl(consumerImpl);
-    private OffsetStore offsetStore = mock(OffsetStore.class);
-    private DefaultLitePullConsumer consumer = new DefaultLitePullConsumer();
-    private MQClientInstance client = mock(MQClientInstance.class);
-    private MQAdminImpl admin = mock(MQAdminImpl.class);
+    private final MessageQueue mq = new MessageQueue("topic1", "broker1", 0);
+    private final MessageQueue retryMq = new MessageQueue(MixAll.RETRY_GROUP_TOPIC_PREFIX + "group", "broker1", 0);
+    private final DefaultLitePullConsumerImpl consumerImpl = mock(DefaultLitePullConsumerImpl.class);
+    private final RebalanceLitePullImpl rebalanceImpl = new RebalanceLitePullImpl(consumerImpl);
+    private final OffsetStore offsetStore = mock(OffsetStore.class);
+    private final DefaultLitePullConsumer consumer = new DefaultLitePullConsumer();
+    private final MQClientInstance client = mock(MQClientInstance.class);
+    private final MQAdminImpl admin = mock(MQAdminImpl.class);
 
     public RebalanceLitePullImplTest() {
         when(consumerImpl.getDefaultLitePullConsumer()).thenReturn(consumer);

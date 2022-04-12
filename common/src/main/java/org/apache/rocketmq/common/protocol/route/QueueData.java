@@ -91,9 +91,7 @@ public class QueueData implements Comparable<QueueData> {
             return false;
         if (writeQueueNums != other.writeQueueNums)
             return false;
-        if (topicSysFlag != other.topicSysFlag)
-            return false;
-        return true;
+        return topicSysFlag == other.topicSysFlag;
     }
 
     @Override

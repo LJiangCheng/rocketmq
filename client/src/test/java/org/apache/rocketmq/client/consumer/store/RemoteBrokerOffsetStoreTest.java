@@ -50,9 +50,9 @@ public class RemoteBrokerOffsetStoreTest {
     private MQClientInstance mQClientFactory;
     @Mock
     private MQClientAPIImpl mqClientAPI;
-    private String group = "FooBarGroup";
-    private String topic = "FooBar";
-    private String brokerName = "DefaultBrokerName";
+    private final String group = "FooBarGroup";
+    private final String topic = "FooBar";
+    private final String brokerName = "DefaultBrokerName";
 
     @Before
     public void init() {

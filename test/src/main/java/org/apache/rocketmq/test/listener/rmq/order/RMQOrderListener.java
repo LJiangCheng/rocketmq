@@ -29,7 +29,7 @@ import org.apache.rocketmq.common.message.MessageExt;
 import org.apache.rocketmq.test.listener.AbstractListener;
 
 public class RMQOrderListener extends AbstractListener implements MessageListenerOrderly {
-    private Map<String/* brokerId_brokerIp */, Collection<Object>> msgs = new ConcurrentHashMap<String, Collection<Object>>();
+    private final Map<String/* brokerId_brokerIp */, Collection<Object>> msgs = new ConcurrentHashMap<String, Collection<Object>>();
 
     public RMQOrderListener() {
         super();

@@ -32,7 +32,7 @@ public enum LanguageCode {
     OMS((byte) 11),
     RUST((byte) 12);
 
-    private byte code;
+    private final byte code;
 
     LanguageCode(byte code) {
         this.code = code;

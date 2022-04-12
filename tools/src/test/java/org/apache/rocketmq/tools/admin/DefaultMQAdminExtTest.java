@@ -87,13 +87,13 @@ import static org.mockito.Mockito.when;
 public class DefaultMQAdminExtTest {
     private static DefaultMQAdminExt defaultMQAdminExt;
     private static DefaultMQAdminExtImpl defaultMQAdminExtImpl;
-    private static MQClientInstance mqClientInstance = MQClientManager.getInstance().getOrCreateMQClientInstance(new ClientConfig());
+    private static final MQClientInstance mqClientInstance = MQClientManager.getInstance().getOrCreateMQClientInstance(new ClientConfig());
     private static MQClientAPIImpl mQClientAPIImpl;
-    private static Properties properties = new Properties();
-    private static TopicList topicList = new TopicList();
-    private static TopicRouteData topicRouteData = new TopicRouteData();
-    private static KVTable kvTable = new KVTable();
-    private static ClusterInfo clusterInfo = new ClusterInfo();
+    private static final Properties properties = new Properties();
+    private static final TopicList topicList = new TopicList();
+    private static final TopicRouteData topicRouteData = new TopicRouteData();
+    private static final KVTable kvTable = new KVTable();
+    private static final ClusterInfo clusterInfo = new ClusterInfo();
 
     @BeforeClass
     public static void init() throws Exception {

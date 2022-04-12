@@ -93,10 +93,10 @@ import static org.mockito.Mockito.when;
 public class DefaultMQConsumerWithTraceTest {
     private String consumerGroup;
     private String consumerGroupNormal;
-    private String producerGroupTraceTemp = TopicValidator.RMQ_SYS_TRACE_TOPIC + System.currentTimeMillis();
+    private final String producerGroupTraceTemp = TopicValidator.RMQ_SYS_TRACE_TOPIC + System.currentTimeMillis();
 
-    private String topic = "FooBar";
-    private String brokerName = "BrokerA";
+    private final String topic = "FooBar";
+    private final String brokerName = "BrokerA";
     private MQClientInstance mQClientFactory;
 
     @Mock
@@ -112,7 +112,7 @@ public class DefaultMQConsumerWithTraceTest {
     @Mock
     private MQClientAPIImpl mQClientTraceAPIImpl;
     private DefaultMQProducer traceProducer;
-    private String customerTraceTopic = "rmq_trace_topic_12345";
+    private final String customerTraceTopic = "rmq_trace_topic_12345";
 
     @Before
     public void init() throws Exception {
@@ -198,7 +198,7 @@ public class DefaultMQConsumerWithTraceTest {
                     messageClientExt.setOffsetMsgId("234");
                     messageClientExt.setBornHost(new InetSocketAddress(8080));
                     messageClientExt.setStoreHost(new InetSocketAddress(8080));
-                    PullResult pullResult = createPullResult(requestHeader, PullStatus.FOUND, Collections.<MessageExt>singletonList(messageClientExt));
+                    PullResult pullResult = createPullResult(requestHeader, PullStatus.FOUND, Collections.singletonList(messageClientExt));
                     ((PullCallback) mock.getArgument(4)).onSuccess(pullResult);
                     return pullResult;
                 }

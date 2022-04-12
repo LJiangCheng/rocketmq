@@ -124,7 +124,7 @@ public class ClusterAclConfigVersionListSubCommand implements SubCommand {
                     clusterAclVersionInfo.getBrokerName(),
                     clusterAclVersionInfo.getBrokerAddr(),
                     entry.getKey(),
-                    String.valueOf(entry.getValue().getCounter()),
+                        entry.getValue().getCounter(),
                     sdf.format(new Timestamp(entry.getValue().getTimestamp()))
                 );
             }

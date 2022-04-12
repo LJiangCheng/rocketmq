@@ -203,7 +203,7 @@ public class ConsumerInOrder {
 
         consumer.registerMessageListener(new MessageListenerOrderly() {
 
-            Random random = new Random();
+            final Random random = new Random();
 
             @Override
             public ConsumeOrderlyStatus consumeMessage(List<MessageExt> msgs, ConsumeOrderlyContext context) {

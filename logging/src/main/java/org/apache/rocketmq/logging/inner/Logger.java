@@ -32,7 +32,7 @@ public class Logger implements Appender.AppenderPipeline {
         return REPOSITORY;
     }
 
-    private String name;
+    private final String name;
 
     volatile private Level level;
 

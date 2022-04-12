@@ -29,7 +29,7 @@ import org.junit.Test;
 import static com.google.common.truth.Truth.assertThat;
 
 public class QueryMsgByIdExceptionIT extends BaseConf {
-    private static Logger logger = Logger.getLogger(QueryMsgByKeyIT.class);
+    private static final Logger logger = Logger.getLogger(QueryMsgByKeyIT.class);
     private static RMQNormalProducer producer = null;
     private static String topic = null;
 

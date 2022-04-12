@@ -64,10 +64,7 @@ public class BloomFilterData {
 
         if (bitNum != that.bitNum)
             return false;
-        if (!Arrays.equals(bitPos, that.bitPos))
-            return false;
-
-        return true;
+        return Arrays.equals(bitPos, that.bitPos);
     }
 
     @Override

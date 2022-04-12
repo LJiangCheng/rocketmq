@@ -23,7 +23,7 @@ import java.util.UUID;
 public class RandomUtils {
     private static final int UNICODE_START = '\u4E00';
     private static final int UNICODE_END = '\u9FA0';
-    private static Random rd = new Random();
+    private static final Random rd = new Random();
 
     private RandomUtils() {
 

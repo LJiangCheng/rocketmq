@@ -41,11 +41,11 @@ public class AclFileWatchService extends ServiceThread {
     @Deprecated
     private final Map<String, String> fileCurrentHash;
     private Map<String, Long> fileLastModifiedTime;
-    private List<String/**absolute pathname **/> fileList = new ArrayList<>();
+    private final List<String/**absolute pathname **/> fileList = new ArrayList<>();
     private final AclFileWatchService.Listener listener;
     private static final int WATCH_INTERVAL = 5000;
-    private MessageDigest md = MessageDigest.getInstance("MD5");
-    private String defaultAclFile;
+    private final MessageDigest md = MessageDigest.getInstance("MD5");
+    private final String defaultAclFile;
 
     public AclFileWatchService(String path, String defaultAclFile, final AclFileWatchService.Listener listener) throws Exception {
         this.aclPath = path;

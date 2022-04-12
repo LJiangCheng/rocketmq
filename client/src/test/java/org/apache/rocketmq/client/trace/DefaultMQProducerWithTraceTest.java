@@ -61,7 +61,7 @@ import static org.mockito.Mockito.when;
 public class DefaultMQProducerWithTraceTest {
 
     @Spy
-    private MQClientInstance mQClientFactory = MQClientManager.getInstance().getOrCreateMQClientInstance(new ClientConfig());
+    private final MQClientInstance mQClientFactory = MQClientManager.getInstance().getOrCreateMQClientInstance(new ClientConfig());
     @Mock
     private MQClientAPIImpl mQClientAPIImpl;
 
@@ -73,11 +73,11 @@ public class DefaultMQProducerWithTraceTest {
     private DefaultMQProducer normalProducer;
 
     private Message message;
-    private String topic = "FooBar";
-    private String producerGroupPrefix = "FooBar_PID";
-    private String producerGroupTemp = producerGroupPrefix + System.currentTimeMillis();
-    private String producerGroupTraceTemp = TopicValidator.RMQ_SYS_TRACE_TOPIC + System.currentTimeMillis();
-    private String customerTraceTopic = "rmq_trace_topic_12345";
+    private final String topic = "FooBar";
+    private final String producerGroupPrefix = "FooBar_PID";
+    private final String producerGroupTemp = producerGroupPrefix + System.currentTimeMillis();
+    private final String producerGroupTraceTemp = TopicValidator.RMQ_SYS_TRACE_TOPIC + System.currentTimeMillis();
+    private final String customerTraceTopic = "rmq_trace_topic_12345";
 
     @Before
     public void init() throws Exception {

@@ -44,7 +44,7 @@ public class ClientLogger {
 
     private static final boolean CLIENT_USE_SLF4J;
 
-    private static Appender appenderProxy = new AppenderProxy();
+    private static final Appender appenderProxy = new AppenderProxy();
 
     //private static Appender rocketmqClientAppender = null;
 

@@ -107,7 +107,7 @@ public abstract class ServerResponseMocker {
 
     @ChannelHandler.Sharable
     private class NettyServerHandler extends SimpleChannelInboundHandler<RemotingCommand> {
-        private HashMap<String, String> extMap;
+        private final HashMap<String, String> extMap;
 
         public NettyServerHandler(HashMap<String, String> extMap) {
             this.extMap = extMap;

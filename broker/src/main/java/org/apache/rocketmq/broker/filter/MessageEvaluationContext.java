@@ -28,7 +28,7 @@ import java.util.Map.Entry;
  */
 public class MessageEvaluationContext implements EvaluationContext {
 
-    private Map<String, String> properties;
+    private final Map<String, String> properties;
 
     public MessageEvaluationContext(Map<String, String> properties) {
         this.properties = properties;

@@ -35,7 +35,7 @@ import static org.mockito.Mockito.when;
 @RunWith(MockitoJUnitRunner.class)
 public class ProducerManagerTest {
     private ProducerManager producerManager;
-    private String group = "FooBar";
+    private final String group = "FooBar";
     private ClientChannelInfo clientInfo;
 
     @Mock

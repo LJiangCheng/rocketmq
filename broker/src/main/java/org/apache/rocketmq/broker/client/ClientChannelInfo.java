@@ -83,13 +83,8 @@ public class ClientChannelInfo {
             return false;
         ClientChannelInfo other = (ClientChannelInfo) obj;
         if (channel == null) {
-            if (other.channel != null)
-                return false;
-        } else if (this.channel != other.channel) {
-            return false;
-        }
-
-        return true;
+            return other.channel == null;
+        } else return this.channel == other.channel;
     }
 
     @Override

@@ -38,7 +38,7 @@ import static org.mockito.Mockito.mock;
 public class SkipAccumulationCommandTest {
     private static DefaultMQAdminExt defaultMQAdminExt;
     private static DefaultMQAdminExtImpl defaultMQAdminExtImpl;
-    private static MQClientInstance mqClientInstance = MQClientManager.getInstance().getOrCreateMQClientInstance(new ClientConfig());
+    private static final MQClientInstance mqClientInstance = MQClientManager.getInstance().getOrCreateMQClientInstance(new ClientConfig());
     private static MQClientAPIImpl mQClientAPIImpl;
 
     @BeforeClass

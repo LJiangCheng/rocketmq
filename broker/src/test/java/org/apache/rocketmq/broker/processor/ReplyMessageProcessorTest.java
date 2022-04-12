@@ -63,7 +63,7 @@ import static org.mockito.Mockito.when;
 public class ReplyMessageProcessorTest {
     private ReplyMessageProcessor replyMessageProcessor;
     @Spy
-    private BrokerController brokerController = new BrokerController(new BrokerConfig(), new NettyServerConfig(), new NettyClientConfig(), new MessageStoreConfig());
+    private final BrokerController brokerController = new BrokerController(new BrokerConfig(), new NettyServerConfig(), new NettyClientConfig(), new MessageStoreConfig());
     @Mock
     private ChannelHandlerContext handlerContext;
     @Mock
@@ -71,8 +71,8 @@ public class ReplyMessageProcessorTest {
     @Mock
     private Channel channel;
 
-    private String topic = "FooBar";
-    private String group = "FooBarGroup";
+    private final String topic = "FooBar";
+    private final String group = "FooBarGroup";
     private ClientChannelInfo clientInfo;
     @Mock
     private Broker2Client broker2Client;

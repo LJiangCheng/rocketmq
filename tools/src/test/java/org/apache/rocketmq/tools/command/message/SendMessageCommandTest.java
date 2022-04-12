@@ -45,7 +45,7 @@ import static org.mockito.Mockito.when;
 
 public class SendMessageCommandTest {
 
-    private static SendMessageCommand sendMessageCommand = new SendMessageCommand();
+    private static final SendMessageCommand sendMessageCommand = new SendMessageCommand();
 
     @BeforeClass
     public static void init() throws MQClientException, RemotingException, InterruptedException, MQBrokerException, NoSuchFieldException, IllegalAccessException {

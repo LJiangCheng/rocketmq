@@ -53,11 +53,11 @@ public class NamesrvController {
 
     private RemotingServer remotingServer;
 
-    private BrokerHousekeepingService brokerHousekeepingService;
+    private final BrokerHousekeepingService brokerHousekeepingService;
 
     private ExecutorService remotingExecutor;
 
-    private Configuration configuration;
+    private final Configuration configuration;
     private FileWatchService fileWatchService;
 
     public NamesrvController(NamesrvConfig namesrvConfig, NettyServerConfig nettyServerConfig) {

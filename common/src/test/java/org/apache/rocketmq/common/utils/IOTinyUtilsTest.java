@@ -32,7 +32,7 @@ import java.util.List;
 
 public class IOTinyUtilsTest {
 
-    private String testRootDir = System.getProperty("user.home") + File.separator + "iotinyutilstest";
+    private final String testRootDir = System.getProperty("user.home") + File.separator + "iotinyutilstest";
 
     @Before
     public void init() {
@@ -101,7 +101,7 @@ public class IOTinyUtilsTest {
         }
 
         StringReader reader = new StringReader(sb.toString());
-        Method method = IOTinyUtils.class.getDeclaredMethod("toBufferedReader", new Class[]{Reader.class});
+        Method method = IOTinyUtils.class.getDeclaredMethod("toBufferedReader", Reader.class);
         method.setAccessible(true);
         Object bReader = method.invoke(IOTinyUtils.class, reader);
 

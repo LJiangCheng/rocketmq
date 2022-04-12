@@ -59,8 +59,8 @@ The ```executeLocalTransaction``` method is used to execute local transaction wh
 The ```checkLocalTransaction``` method is used to check the local transaction status and respond to MQ check requests. It also returns one of three transaction status mentioned in the previous section. 
 ```java
 public class TransactionListenerImpl implements TransactionListener {
-  private AtomicInteger transactionIndex = new AtomicInteger(0);
-  private ConcurrentHashMap<String, Integer> localTrans = new ConcurrentHashMap<>();
+  private final AtomicInteger transactionIndex = new AtomicInteger(0);
+  private final ConcurrentHashMap<String, Integer> localTrans = new ConcurrentHashMap<>();
   @Override
   public LocalTransactionState executeLocalTransaction(Message msg, Object arg) {
       int value = transactionIndex.getAndIncrement();

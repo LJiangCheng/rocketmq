@@ -30,7 +30,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class SelectMessageQueueRetryTest {
 
-    private String topic = "TEST";
+    private final String topic = "TEST";
 
     @Test
     public void testSelect() throws Exception {

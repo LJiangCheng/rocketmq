@@ -18,6 +18,7 @@
 package org.apache.rocketmq.test.client.consumer.broadcast.normal;
 
 import org.apache.log4j.Logger;
+import org.apache.rocketmq.test.base.BaseConf;
 import org.apache.rocketmq.test.client.consumer.broadcast.BaseBroadCastIT;
 import org.apache.rocketmq.test.client.rmq.RMQBroadCastConsumer;
 import org.apache.rocketmq.test.client.rmq.RMQNormalProducer;
@@ -32,7 +33,7 @@ import org.junit.Test;
 import static com.google.common.truth.Truth.assertThat;
 
 public class BroadCastNormalMsgTwoDiffGroupRecvIT extends BaseBroadCastIT {
-    private static Logger logger = Logger
+    private static final Logger logger = Logger
         .getLogger(NormalMsgTwoSameGroupConsumerIT.class);
     private RMQNormalProducer producer = null;
     private String topic = null;
@@ -47,7 +48,7 @@ public class BroadCastNormalMsgTwoDiffGroupRecvIT extends BaseBroadCastIT {
 
     @After
     public void tearDown() {
-        super.shutdown();
+        shutdown();
     }
 
     @Test

@@ -24,7 +24,7 @@ import java.util.Map.Entry;
 import java.util.Properties;
 
 public class FileUtil {
-    private static String lineSeperator = System.getProperty("line.separator");
+    private static final String lineSeperator = System.getProperty("line.separator");
 
     private String filePath = "";
     private String fileName = "";

@@ -50,7 +50,7 @@ public class BaseConf {
     protected static BrokerController brokerController2;
     protected static List<Object> mqClients = new ArrayList<Object>();
     protected static boolean debug = false;
-    private static Logger log = Logger.getLogger(BaseConf.class);
+    private static final Logger log = Logger.getLogger(BaseConf.class);
 
     static {
     	System.setProperty(RemotingCommand.REMOTING_VERSION_KEY, Integer.toString(MQVersion.CURRENT_VERSION));

@@ -70,8 +70,8 @@ import static org.mockito.Mockito.when;
 
 public class ConsumeMessageOrderlyServiceTest {
     private String consumerGroup;
-    private String topic = "FooBar";
-    private String brokerName = "BrokerA";
+    private final String topic = "FooBar";
+    private final String brokerName = "BrokerA";
     private DefaultMQPushConsumer pushConsumer;
     private MQClientInstance mQClientFactory;
 
@@ -144,7 +144,7 @@ public class ConsumeMessageOrderlyServiceTest {
                         messageClientExt.setOffsetMsgId("234");
                         messageClientExt.setBornHost(new InetSocketAddress(8080));
                         messageClientExt.setStoreHost(new InetSocketAddress(8080));
-                        PullResult pullResult = createPullResult(requestHeader, PullStatus.FOUND, Collections.<MessageExt>singletonList(messageClientExt));
+                        PullResult pullResult = createPullResult(requestHeader, PullStatus.FOUND, Collections.singletonList(messageClientExt));
                         ((PullCallback) mock.getArgument(4)).onSuccess(pullResult);
                         return pullResult;
                     }

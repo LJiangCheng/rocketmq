@@ -62,21 +62,21 @@ public class AsyncTraceDispatcher implements TraceDispatcher {
     private final DefaultMQProducer traceProducer;
     private final ThreadPoolExecutor traceExecutor;
     // The last discard number of log
-    private AtomicLong discardCount;
+    private final AtomicLong discardCount;
     private Thread worker;
     private final ArrayBlockingQueue<TraceContext> traceContextQueue;
-    private ArrayBlockingQueue<Runnable> appenderQueue;
+    private final ArrayBlockingQueue<Runnable> appenderQueue;
     private volatile Thread shutDownHook;
     private volatile boolean stopped = false;
     private DefaultMQProducerImpl hostProducer;
     private DefaultMQPushConsumerImpl hostConsumer;
-    private volatile ThreadLocalIndex sendWhichQueue = new ThreadLocalIndex();
-    private String dispatcherId = UUID.randomUUID().toString();
+    private final ThreadLocalIndex sendWhichQueue = new ThreadLocalIndex();
+    private final String dispatcherId = UUID.randomUUID().toString();
     private String traceTopicName;
-    private AtomicBoolean isStarted = new AtomicBoolean(false);
+    private final AtomicBoolean isStarted = new AtomicBoolean(false);
     private AccessChannel accessChannel = AccessChannel.LOCAL;
-    private String group;
-    private Type type;
+    private final String group;
+    private final Type type;
 
     public AsyncTraceDispatcher(String group, Type type, String traceTopicName, RPCHook rpcHook) {
         // queueSize is greater than or equal to the n power of 2 of value
@@ -212,7 +212,7 @@ public class AsyncTraceDispatcher implements TraceDispatcher {
     public void registerShutDownHook() {
         if (shutDownHook == null) {
             shutDownHook = new Thread(new Runnable() {
-                private volatile boolean hasShutdown = false;
+                private final boolean hasShutdown = false;
 
                 @Override
                 public void run() {

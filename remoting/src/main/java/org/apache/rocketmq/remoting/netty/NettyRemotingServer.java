@@ -107,7 +107,7 @@ public class NettyRemotingServer extends NettyRemotingAbstract implements Remoti
         }
 
         this.publicExecutor = Executors.newFixedThreadPool(publicThreadNums, new ThreadFactory() {
-            private AtomicInteger threadIndex = new AtomicInteger(0);
+            private final AtomicInteger threadIndex = new AtomicInteger(0);
 
             @Override
             public Thread newThread(Runnable r) {
@@ -117,7 +117,7 @@ public class NettyRemotingServer extends NettyRemotingAbstract implements Remoti
 
         if (useEpoll()) {
             this.eventLoopGroupBoss = new EpollEventLoopGroup(1, new ThreadFactory() {
-                private AtomicInteger threadIndex = new AtomicInteger(0);
+                private final AtomicInteger threadIndex = new AtomicInteger(0);
 
                 @Override
                 public Thread newThread(Runnable r) {
@@ -126,8 +126,8 @@ public class NettyRemotingServer extends NettyRemotingAbstract implements Remoti
             });
 
             this.eventLoopGroupSelector = new EpollEventLoopGroup(nettyServerConfig.getServerSelectorThreads(), new ThreadFactory() {
-                private AtomicInteger threadIndex = new AtomicInteger(0);
-                private int threadTotal = nettyServerConfig.getServerSelectorThreads();
+                private final AtomicInteger threadIndex = new AtomicInteger(0);
+                private final int threadTotal = nettyServerConfig.getServerSelectorThreads();
 
                 @Override
                 public Thread newThread(Runnable r) {
@@ -136,7 +136,7 @@ public class NettyRemotingServer extends NettyRemotingAbstract implements Remoti
             });
         } else {
             this.eventLoopGroupBoss = new NioEventLoopGroup(1, new ThreadFactory() {
-                private AtomicInteger threadIndex = new AtomicInteger(0);
+                private final AtomicInteger threadIndex = new AtomicInteger(0);
 
                 @Override
                 public Thread newThread(Runnable r) {
@@ -145,8 +145,8 @@ public class NettyRemotingServer extends NettyRemotingAbstract implements Remoti
             });
 
             this.eventLoopGroupSelector = new NioEventLoopGroup(nettyServerConfig.getServerSelectorThreads(), new ThreadFactory() {
-                private AtomicInteger threadIndex = new AtomicInteger(0);
-                private int threadTotal = nettyServerConfig.getServerSelectorThreads();
+                private final AtomicInteger threadIndex = new AtomicInteger(0);
+                private final int threadTotal = nettyServerConfig.getServerSelectorThreads();
 
                 @Override
                 public Thread newThread(Runnable r) {
@@ -186,7 +186,7 @@ public class NettyRemotingServer extends NettyRemotingAbstract implements Remoti
             nettyServerConfig.getServerWorkerThreads(),
             new ThreadFactory() {
 
-                private AtomicInteger threadIndex = new AtomicInteger(0);
+                private final AtomicInteger threadIndex = new AtomicInteger(0);
 
                 @Override
                 public Thread newThread(Runnable r) {

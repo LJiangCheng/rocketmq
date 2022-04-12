@@ -204,7 +204,7 @@ public class AllocateMachineRoomNearByTest {
     private List<String> createConsumerIdList(String machineRoom, int size) {
         List<String> consumerIdList = new ArrayList<String>(size);
         for (int i = 0; i < size; i++) {
-            consumerIdList.add(machineRoom +"-"+CID_PREFIX + String.valueOf(i));
+            consumerIdList.add(machineRoom +"-"+CID_PREFIX + i);
         }
         return consumerIdList;
     }

@@ -25,7 +25,7 @@ import org.junit.Test;
 
 public class BrokerStartupTest {
 
-    private String storePathRootDir = ".";
+    private final String storePathRootDir = ".";
 
     @Test
     public void testProperties2SystemEnv() throws NoSuchMethodException, InvocationTargetException,

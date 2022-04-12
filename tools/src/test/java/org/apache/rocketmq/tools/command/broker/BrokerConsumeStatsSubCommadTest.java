@@ -49,11 +49,11 @@ import static org.mockito.Mockito.when;
 
 public class BrokerConsumeStatsSubCommadTest {
 
-    private static BrokerConsumeStatsSubCommad cmd = new BrokerConsumeStatsSubCommad();
+    private static final BrokerConsumeStatsSubCommad cmd = new BrokerConsumeStatsSubCommad();
 
     private static DefaultMQAdminExt defaultMQAdminExt;
     private static DefaultMQAdminExtImpl defaultMQAdminExtImpl;
-    private static MQClientInstance mqClientInstance = MQClientManager.getInstance().getOrCreateMQClientInstance(new ClientConfig());
+    private static final MQClientInstance mqClientInstance = MQClientManager.getInstance().getOrCreateMQClientInstance(new ClientConfig());
     private static MQClientAPIImpl mQClientAPIImpl;
 
     @BeforeClass

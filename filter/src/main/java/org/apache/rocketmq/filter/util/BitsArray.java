@@ -22,8 +22,8 @@ package org.apache.rocketmq.filter.util;
  */
 public class BitsArray implements Cloneable {
 
-    private byte[] bytes;
-    private int bitLength;
+    private final byte[] bytes;
+    private final int bitLength;
 
     public static BitsArray create(int bitLength) {
         return new BitsArray(bitLength);
@@ -105,11 +105,7 @@ public class BitsArray implements Cloneable {
         checkBitPosition(bitPos, this);
 
         boolean value = getBit(bitPos);
-        if (value ^ set) {
-            setBit(bitPos, true);
-        } else {
-            setBit(bitPos, false);
-        }
+        setBit(bitPos, value ^ set);
     }
 
     public void or(final BitsArray other) {

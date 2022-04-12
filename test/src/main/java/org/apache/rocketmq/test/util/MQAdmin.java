@@ -30,7 +30,7 @@ import org.apache.rocketmq.tools.admin.DefaultMQAdminExt;
 import org.apache.rocketmq.tools.command.CommandUtil;
 
 public class MQAdmin {
-    private static Logger log = Logger.getLogger(MQAdmin.class);
+    private static final Logger log = Logger.getLogger(MQAdmin.class);
 
     public static boolean createTopic(String nameSrvAddr, String clusterName, String topic,
         int queueNum) {

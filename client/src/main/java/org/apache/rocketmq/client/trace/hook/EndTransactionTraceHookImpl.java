@@ -33,7 +33,7 @@ import java.util.ArrayList;
 
 public class EndTransactionTraceHookImpl implements EndTransactionHook {
 
-    private TraceDispatcher localDispatcher;
+    private final TraceDispatcher localDispatcher;
 
     public EndTransactionTraceHookImpl(TraceDispatcher localDispatcher) {
         this.localDispatcher = localDispatcher;

@@ -35,13 +35,13 @@ import org.apache.rocketmq.test.util.RandomUtil;
 import org.apache.rocketmq.test.util.TestUtil;
 
 public class RMQAsyncSendProducer extends AbstractMQProducer {
-    private static Logger logger = Logger
+    private static final Logger logger = Logger
         .getLogger(RMQAsyncSendProducer.class);
     private String nsAddr = null;
     private DefaultMQProducer producer = null;
     private SendCallback sendCallback = null;
-    private List<SendResult> successSendResult = Collections.synchronizedList(new ArrayList<SendResult>());
-    private AtomicInteger exceptionMsgCount = new AtomicInteger(0);
+    private final List<SendResult> successSendResult = Collections.synchronizedList(new ArrayList<SendResult>());
+    private final AtomicInteger exceptionMsgCount = new AtomicInteger(0);
     private int msgSize = 0;
 
     public RMQAsyncSendProducer(String nsAddr, String topic) {

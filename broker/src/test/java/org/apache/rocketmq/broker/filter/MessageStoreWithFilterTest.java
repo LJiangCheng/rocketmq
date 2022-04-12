@@ -71,9 +71,9 @@ public class MessageStoreWithFilterTest {
 
     private ConsumerFilterManager filterManager;
 
-    private int topicCount = 3;
+    private final int topicCount = 3;
 
-    private int msgPerTopic = 30;
+    private final int msgPerTopic = 30;
 
     static {
         try {
@@ -356,10 +356,7 @@ public class MessageStoreWithFilterTest {
                 new MessageFilter() {
                     @Override
                     public boolean isMatchedByConsumeQueue(Long tagsCode, ConsumeQueueExt.CqExtUnit cqExtUnit) {
-                        if (tagsCode != null && tagsCode <= ConsumeQueueExt.MAX_ADDR) {
-                            return false;
-                        }
-                        return true;
+                        return tagsCode == null || tagsCode > ConsumeQueueExt.MAX_ADDR;
                     }
 
                     @Override

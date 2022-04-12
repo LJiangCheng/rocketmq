@@ -25,7 +25,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class BeanUtilsTest {
-    private KeyValue properties = OMS.newKeyValue();
+    private final KeyValue properties = OMS.newKeyValue();
 
     public static class CustomizedConfig extends ClientConfig {
         final static String STRING_TEST = "string.test";

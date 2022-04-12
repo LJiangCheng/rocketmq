@@ -586,15 +586,12 @@ public class ConsumeQueueExt {
                 return false;
             if (tagsCode != cqExtUnit.tagsCode)
                 return false;
-            if (!Arrays.equals(filterBitMap, cqExtUnit.filterBitMap))
-                return false;
-
-            return true;
+            return Arrays.equals(filterBitMap, cqExtUnit.filterBitMap);
         }
 
         @Override
         public int hashCode() {
-            int result = (int) size;
+            int result = size;
             result = 31 * result + (int) (tagsCode ^ (tagsCode >>> 32));
             result = 31 * result + (int) (msgStoreTime ^ (msgStoreTime >>> 32));
             result = 31 * result + (int) bitMapSize;

@@ -26,7 +26,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class SelectMessageQueueByHashTest {
 
-    private String topic = "FooBar";
+    private final String topic = "FooBar";
 
     @Test
     public void testSelect() throws Exception {

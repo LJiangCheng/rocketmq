@@ -156,11 +156,7 @@ public class NamespaceUtil {
             return false;
         }
 
-        if (TopicValidator.isSystemTopic(resource) || MixAll.isSysConsumerGroup(resource)) {
-            return true;
-        }
-
-        return false;
+        return TopicValidator.isSystemTopic(resource) || MixAll.isSysConsumerGroup(resource);
     }
 
     public static boolean isRetryTopic(String resource) {

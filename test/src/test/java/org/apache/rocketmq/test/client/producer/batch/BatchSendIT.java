@@ -35,9 +35,9 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class BatchSendIT extends BaseConf {
-    private static Logger logger = Logger.getLogger(TagMessageWith1ConsumerIT.class);
+    private static final Logger logger = Logger.getLogger(TagMessageWith1ConsumerIT.class);
     private String topic = null;
-    private Random random = new Random();
+    private final Random random = new Random();
 
     @Before
     public void setUp() {
@@ -47,7 +47,7 @@ public class BatchSendIT extends BaseConf {
 
     @After
     public void tearDown() {
-        super.shutdown();
+        shutdown();
     }
 
     @Test

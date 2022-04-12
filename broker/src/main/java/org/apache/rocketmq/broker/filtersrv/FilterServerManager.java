@@ -43,7 +43,7 @@ public class FilterServerManager {
         new ConcurrentHashMap<Channel, FilterServerInfo>(16);
     private final BrokerController brokerController;
 
-    private ScheduledExecutorService scheduledExecutorService = Executors
+    private final ScheduledExecutorService scheduledExecutorService = Executors
         .newSingleThreadScheduledExecutor(new ThreadFactoryImpl("FilterServerManagerScheduledThread"));
 
     public FilterServerManager(final BrokerController brokerController) {

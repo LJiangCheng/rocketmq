@@ -24,7 +24,7 @@ import org.apache.log4j.Logger;
 import org.apache.rocketmq.common.message.MessageExt;
 
 public class VerifyUtils {
-    private static Logger logger = Logger.getLogger(VerifyUtils.class);
+    private static final Logger logger = Logger.getLogger(VerifyUtils.class);
 
     public static int verify(Collection<Object> sendMsgs, Collection<Object> recvMsgs) {
         int miss = 0;

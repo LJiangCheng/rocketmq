@@ -23,9 +23,9 @@ import org.apache.rocketmq.test.util.data.collect.impl.ListDataCollectorImpl;
 import org.apache.rocketmq.test.util.data.collect.impl.MapDataCollectorImpl;
 
 public final class DataCollectorManager {
-    private static DataCollectorManager instance = new DataCollectorManager();
-    private Map<String, DataCollector> collectMap = new HashMap<String, DataCollector>();
-    private Object lock = new Object();
+    private static final DataCollectorManager instance = new DataCollectorManager();
+    private final Map<String, DataCollector> collectMap = new HashMap<String, DataCollector>();
+    private final Object lock = new Object();
 
     private DataCollectorManager() {
     }
@@ -39,7 +39,7 @@ public final class DataCollectorManager {
         if (!collectMap.containsKey(realKey)) {
             synchronized (lock) {
                 if (!collectMap.containsKey(realKey)) {
-                    DataCollector collect = (DataCollector) new MapDataCollectorImpl();
+                    DataCollector collect = new MapDataCollectorImpl();
                     collectMap.put(realKey, collect);
                 }
             }

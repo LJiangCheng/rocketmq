@@ -133,12 +133,12 @@ public class ConsumerFilterData {
 
     @Override
     public boolean equals(Object o) {
-        return EqualsBuilder.reflectionEquals(this, o, Collections.<String>emptyList());
+        return EqualsBuilder.reflectionEquals(this, o, Collections.emptyList());
     }
 
     @Override
     public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this, Collections.<String>emptyList());
+        return HashCodeBuilder.reflectionHashCode(this, Collections.emptyList());
     }
 
     @Override

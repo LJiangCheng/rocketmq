@@ -50,11 +50,7 @@ public class ExpressionMessageFilter implements MessageFilter {
             return;
         }
         BloomFilter bloomFilter = this.consumerFilterManager.getBloomFilter();
-        if (bloomFilter != null && bloomFilter.isValid(consumerFilterData.getBloomFilterData())) {
-            bloomDataValid = true;
-        } else {
-            bloomDataValid = false;
-        }
+        bloomDataValid = bloomFilter != null && bloomFilter.isValid(consumerFilterData.getBloomFilterData());
     }
 
     @Override

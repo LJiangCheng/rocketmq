@@ -26,7 +26,7 @@ import org.apache.rocketmq.test.util.data.collect.DataCollector;
 
 public class ListDataCollectorImpl implements DataCollector {
 
-    private List<Object> datas = new ArrayList<Object>();
+    private final List<Object> datas = new ArrayList<Object>();
     private boolean lock = false;
 
     public ListDataCollectorImpl() {
